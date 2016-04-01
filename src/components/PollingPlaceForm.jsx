@@ -97,7 +97,7 @@ export default class PollingPlaceForm extends Component {
 }
 
 PollingPlaceForm.defaultProps = {
-  fusionkey: 'AIzaSyBXp2otyudYdGVmWC498IsawNeStFRuJBk', //read-only access
+  fusionkey: 'AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM', //read-only access
   mapboxkey: 'pk.eyJ1IjoiYnJvb2tzbiIsImEiOiJjaWpkbmkzMDEwMDh3dGdra2Y0OHYwbjViIn0.gqY3_NGpI96FuDQ7csaOUw', //geocoding API
   caption: 'Enter your house number, zip code, and date of birth to find your polling place.',
   stateAbbr: 'CA',
