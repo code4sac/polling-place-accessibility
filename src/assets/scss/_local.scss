@@ -1,3 +1,30 @@
+$header-sizes: (
+  small: (
+    'h1': 48,
+    'h2': 20,
+    'h3': 19,
+    'h4': 18,
+    'h5': 17,
+    'h6': 16,
+  ),
+  medium: (
+    'h1': 72,
+    'h2': 40,
+    'h3': 31,
+    'h4': 25,
+    'h5': 20,
+    'h6': 16,
+  ),
+  large: (
+    'h1': 48 * 2,
+    'h2': 40,
+    'h3': 31,
+    'h4': 25,
+    'h5': 20,
+    'h6': 16,
+  ),
+);
+
 .row.full-width {
   width: 100%;
   margin-left: auto;
@@ -14,13 +41,21 @@
   background-size: 100% auto;
 
   .title {
+    white-space: nowrap;
     font-weight: 300;
-    font-size: 80px;
     text-align: center;
-    padding: 100px;
+    padding: 2em;
     text-transform: uppercase;
     text-shadow: 2px 2px #333;
     color: #fff;
+
+    @include breakpoint(medium) {
+      padding: 1em;
+    }
+    
+    @include breakpoint(small) {
+      padding: 0.8em;
+    }
   }
 }
 
