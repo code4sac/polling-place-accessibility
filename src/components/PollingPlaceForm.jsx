@@ -4,6 +4,10 @@ import pollingPlaceRequests from '../actions/pollingPlaceRequests';
 
 export default class PollingPlaceForm extends Component {
   constructor(props) {
+    // Junar API key: 365e06cd12a419135ae87d9f0ec0a8e60b25fbe3#sthash.qxY4OVZH
+    // Google API key: AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM
+    // Fusion Table key: 1Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR
+    // https://www.googleapis.com/fusiontables/v2/query?sql=SELECT%20*%20FROM%201Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR&key=AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM
     super(props);
     this.state = {
       house: null,
@@ -93,7 +97,7 @@ export default class PollingPlaceForm extends Component {
 }
 
 PollingPlaceForm.defaultProps = {
-  fusionkey: 'AIzaSyBXp2otyudYdGVmWC498IsawNeStFRuJBk', //read-only access
+  fusionkey: 'AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM', //read-only access
   mapboxkey: 'pk.eyJ1IjoiYnJvb2tzbiIsImEiOiJjaWpkbmkzMDEwMDh3dGdra2Y0OHYwbjViIn0.gqY3_NGpI96FuDQ7csaOUw', //geocoding API
   caption: 'Enter your house number, zip code, and date of birth to find your polling place.',
   stateAbbr: 'CA',

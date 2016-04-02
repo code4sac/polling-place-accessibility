@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PollingPlaceForm from './PollingPlaceForm'
+import Place from './PlaceForm'
 
 export class App extends Component {
 
   render() {
     return (
-      <PollingPlaceForm />
+    	<div>
+	      <PollingPlaceForm />
+	      <Place />
+      </div>
     );
   }
 }
