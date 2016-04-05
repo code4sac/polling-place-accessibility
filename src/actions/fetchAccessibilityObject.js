@@ -1,5 +1,6 @@
 var request = require('superagent');
 var set = require('lodash.set');
+var has = require('lodash.has');
 
 var access = function(ppid) {
   'use strict';
@@ -16,6 +17,8 @@ var access = function(ppid) {
         //console.timeEnd('access-request');
         if (err || !res.ok) {
           reject(err);
+        } else if(!has(res, 'body.result.fArray')) {
+          reject(res);
         } else {
           //console.time('access-parse-object');
           var result = [];
