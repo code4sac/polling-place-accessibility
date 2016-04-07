@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import pollingPlaceRequests from '../actions/pollingPlaceRequests';
+import store from '../stores/pollStore.js';
 
 export default class PollingPlaceForm extends Component {
   constructor(props) {
@@ -66,7 +67,11 @@ export default class PollingPlaceForm extends Component {
       }
       return data.PollName;
     }.bind(this))
-    .then(pollingPlaceRequests.place.bind(this))
+    .then(function(pollid){
+      store.setPPID(pollid);
+      return pollingPlaceRequests.place(pollid, this.props.fusionkey);
+    }.bind(this))
+    //.then(pollingPlaceRequests.place.bind(this))
     .then(function(place){
       this.setState({place: place['Polling place'], address: `${place.Address} ${place.City}, ${this.props.stateAbbr} ${place.Zip}`, latitude: place.Lat, longitude: place.Long});
       var caption = '';
