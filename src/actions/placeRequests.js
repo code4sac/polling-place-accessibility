@@ -1,4 +1,5 @@
 import request from 'superagent'
+import _ from 'lodash'
 
 export function getPollingPlaces() {
 	const apikey = 'AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM'
@@ -8,9 +9,10 @@ export function getPollingPlaces() {
       .query({key: apikey})
       .end(function(err, res){
         if (err || !res.ok) {
-        	throw new Error("You suck! " + err)
+        	throw new Error("There was an error!" + err)
         } else {
-        	console.log("YEE BOOTY!",res.body)
+        	console.log("You got it!",res.body)
+
         }
       });
 }
