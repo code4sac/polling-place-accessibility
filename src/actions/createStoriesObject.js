@@ -2,7 +2,7 @@ import parking from './stories/parking.js'
 
 var createStoriesObject = function(pollingPlace) {
   var result = {};
-  result.parking = parking(pollingPlace);
+  result.Parking = parking(pollingPlace);
   return result;
 };
 

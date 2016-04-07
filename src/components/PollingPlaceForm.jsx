@@ -61,34 +61,34 @@ export default class PollingPlaceForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     pollingPlaceRequests.voter(this.state.house, this.state.zip, this.state.dob, this.props.fusionkey)
-    .then(function(data){
+    .then((data) =>{
       if (data.MailDate && data.MailDate != '') {
         this.setState({caption: `Your absentee ballot was mailed to this address on ${data.MailDate}. You may still vote at your polling place on election day.`, mailDate: data.MailDate})
       }
       return data.PollName;
-    }.bind(this))
-    .then(function(pollid){
+    })
+    .then((pollid) =>{
       store.setPPID(pollid);
       return pollingPlaceRequests.place(pollid, this.props.fusionkey);
-    }.bind(this))
+    })
     //.then(pollingPlaceRequests.place.bind(this))
-    .then(function(place){
+    .then((place) => {
       this.setState({place: place['Polling place'], address: `${place.Address} ${place.City}, ${this.props.stateAbbr} ${place.Zip}`, latitude: place.Lat, longitude: place.Long});
       var caption = '';
       if (this.state.mailDate && this.state.mailDate != '') caption += `Your absentee ballot was mailed to this address on ${this.state.mailDate}. You may still vote at your polling place on election day. `;
       caption += `Your polling place is located at ${place['Polling place']}.`;
-      this.setState({caption: caption});
+      this.setState({caption});
       if (!place.Lat || !place.Long) {
         pollingPlaceRequests.geocode(this.state.address, this.props.mapboxkey, this.props.approxLat, this.props.approxLong)
-        .then(function(result){
+        .then((result) =>{
           this.setState({latitude: result.center[1], longitude: result.center[0]});
-        }.bind(this));
+        });
       }
-    }.bind(this))
-    .catch(function(err){
+    })
+    .catch((err) => {
       this.setState({caption: `There was an error finding your polling place: ${err}`});
       this.setState({place: null, address: null});
-    }.bind(this));
+    });
   }
   handleHouseChange(e) {
     this.setState({house: e.target.value});
