@@ -1,6 +1,4 @@
 module.exports = function(pollingPlace){
-  'use strict';
-  debugger;
   var site = pollingPlace;
   var mainParking = site.sec_1;
   var moreParking = site['sec_1.2'];
