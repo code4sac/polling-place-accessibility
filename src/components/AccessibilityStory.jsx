@@ -9,11 +9,16 @@ export default class AccessibilityStory extends Component {
     this.state = {ppid: 0, stories: null};
   }
   render() {
+    var styles = this.props.styles;
     var stories = [];
     var accordionCounter = 0;
     for (var section in this.state.stories) {
       accordionCounter++;
-      let warnings = this.state.stories[section].warnings.map((val) => (<li className="accessibilityWarning">{val}</li>))
+      let warnings = this.state.stories[section].warnings.map((val) => (
+        <li className="accessibilityWarning" style={styles.warningListItem}>
+          <span style={styles.beforeWarning}>⚠   </span>
+          {val}
+        </li>))
       let id = `panel${accordionCounter}a`;
       let href = '#' + id;
       stories.push(
@@ -59,3 +64,14 @@ export default class AccessibilityStory extends Component {
   }
   
 }
+
+AccessibilityStory.defaultProps = {
+  styles: {
+    beforeWarning: {
+      color: 'red'
+    },
+    warningListItem: {
+      listStyleType: 'none'
+    }
+  }
+};
