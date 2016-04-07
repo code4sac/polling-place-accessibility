@@ -13,6 +13,7 @@ export default class AccessibilityStory extends Component {
     var accordionCounter = 0;
     for (var section in this.state.stories) {
       accordionCounter++;
+      let warnings = this.state.stories[section].warnings.map((val) => (<li className="accessibilityWarning">{val}</li>))
       let id = `panel${accordionCounter}a`;
       let href = '#' + id;
       stories.push(
@@ -20,6 +21,9 @@ export default class AccessibilityStory extends Component {
           <a href="{href}">{section}</a>
           <div id="{id}" className="content active">
             {this.state.stories[section].summary}
+            <ul>
+              {warnings}
+            </ul>
           </div>
         </li>
       )
