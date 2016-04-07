@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PollingPlaceForm from './PollingPlaceForm'
+import AccessibilityStory from './AccessibilityStory'
 
 export class App extends Component {
 
@@ -7,6 +8,7 @@ export class App extends Component {
     return (
     	<div>
 	      <PollingPlaceForm />
+        <AccessibilityStory />
       </div>
     );
   }
