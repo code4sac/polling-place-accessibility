@@ -71,7 +71,6 @@ export default class PollingPlaceForm extends Component {
       store.setPPID(pollid);
       return pollingPlaceRequests.place(pollid, this.props.fusionkey);
     })
-    //.then(pollingPlaceRequests.place.bind(this))
     .then((place) => {
       this.setState({place: place['Polling place'], address: `${place.Address} ${place.City}, ${this.props.stateAbbr} ${place.Zip}`, latitude: place.Lat, longitude: place.Long});
       var caption = '';
