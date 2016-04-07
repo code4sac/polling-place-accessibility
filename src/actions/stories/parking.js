@@ -14,7 +14,7 @@ module.exports = function(pollingPlace){
   if (hasVanParking && hasCarParking) {
     response.summary = 'There is a parking lot with safe and handicap-accessible van and car parking.';
   } else if (hasVanParking || hasCarParking) {
-    response.summary = `There is a parking lot with safe and handicap-accissible ${hasVanParking? 'van' : 'car'} parking, `;
+    response.summary = `There is a parking lot with safe and handicap-accessible ${hasVanParking? 'van' : 'car'} parking, `;
     if (hasVanParking >= 1 && hasCarParking >= 1) {
       let plural = ((hasVanParking && numCarParking >= 2) || (hasCarParking && numVanParking >= 2)) ? 's' : '';
       response.summary += `but only ${hasVanParking? numCarParking : numVanParking} space${plural}.`;
