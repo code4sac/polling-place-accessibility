@@ -6,10 +6,17 @@ import createStoriesObject from '../actions/createStoriesObject.js'
 export default class AccessibilityStory extends Component {
   constructor(props) {
     super(props)
-    this.state = {ppid: 0, stories: null};
+    this.state = {
+      ppid: 0,
+      stories: null,
+      ppName: null,
+      acName: null,
+      acPpid: null
+    };
   }
   render() {
     var styles = this.props.styles;
+    var name = this.state.ppName || this.state.acName;
     var stories = [];
     var accordionCounter = 0;
     for (var section in this.state.stories) {
@@ -22,7 +29,7 @@ export default class AccessibilityStory extends Component {
       let id = `panel${accordionCounter}a`;
       let href = '#' + id;
       stories.push(
-        <li className="accordion-navigation">
+        <li key={`${this.state.ppid}-${section}`} className="accordion-navigation">
           <a href="{href}">{section}</a>
           <div id="{id}" className="content active">
             {this.state.stories[section].summary}
@@ -35,6 +42,7 @@ export default class AccessibilityStory extends Component {
     }
     return (
       <div>
+        <h3>{name? `Accessibility of ${name}` : 'Search or select a site to view accessibility information.'}</h3>
         <ul className="accordion" data-accordion>
           {stories}
         </ul>
@@ -53,13 +61,15 @@ export default class AccessibilityStory extends Component {
       getAccessibility(nextState.ppid)
       .then((accessibilityResponse) => {
         var stories = createStoriesObject(accessibilityResponse[nextState.ppid]);
+        this.setState({acName: stories.Info.name, acPpid: stories.Info.ppid});
+        delete stories.Info;
         this.setState({stories});
       })
     }
   }
   getStoreState(o) {
     if (o.ppid !== this.state.ppid) {
-      this.setState({ppid: o.ppid, stories: null});
+      this.setState({ppid: o.ppid, stories: null, ppName: o.ppName});
     }
   }
   

@@ -3,7 +3,6 @@ var set = require('lodash.set');
 var has = require('lodash.has');
 
 var access = function(ppid) {
-  'use strict';
   let p = new Promise(function(resolve, reject){
     //console.time('access-request');
     request
@@ -31,10 +30,13 @@ var access = function(ppid) {
           var ppStr = ppid.toString();
           groupedResults[ppid.toString()] = {};
           result.forEach(function(val, ind, arr){
+            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].ppid`, val.ppid);
             set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].question`, val.question);
             set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].answer`, val.answer);
             set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].data`, val.data);
             set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].comments`, val.comments);
+            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].category`, val.category);
+            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].subcategory`, val.subcategory);
           });
           //console.timeEnd('access-parse-object');
           resolve(groupedResults);

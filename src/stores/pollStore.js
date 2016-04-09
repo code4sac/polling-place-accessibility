@@ -1,13 +1,26 @@
 const store = {};
 
-store.ppid = null;
+store.values = {
+  ppid: null,
+  userPpid: null,
+  ppLat: null,
+  ppLong: null,
+  ppName: null,
+  ppAddress: null
+};
 
 store.countObservers = 0;
 
 store.observers = new Set();
 
 store.setPPID = function(p) {
-  store.ppid = p;
+  store.values.ppid = p;
+  this.onChange();
+};
+store.setVals = function(o) {
+  for (var key in o) {
+    if (store.hasOwnProperty(key)) store[key] = o[key];
+  }
   this.onChange();
 };
 
@@ -19,10 +32,8 @@ store.unobserveChanges = function(fn){
 };
 
 store.onChange = function(){
-  console.log('store changed!');
-  console.log(this.observers);
   this.observers.forEach(function(observer){
-    observer({ppid: store.ppid});
+    observer(store.values);
   });
 };
 

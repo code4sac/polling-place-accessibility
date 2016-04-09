@@ -1,4 +1,7 @@
 module.exports = function(pollingPlace){
+  for (var sec in pollingPlace) {
+    //if ()
+  }
   var site = pollingPlace;
   var mainParking = site.sec_1;
   var moreParking = site['sec_1.2'];
