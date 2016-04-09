@@ -1,6 +1,10 @@
 module.exports = function(pollingPlace){
-  for (var sec in pollingPlace) {
-    //if ()
+  //section 1.0 is supposed to mean 0-parking-mitigation, but is sometimes misapplied
+  for (var qid in pollingPlace['sec_1.0']) {
+    if (!pollingPlace['sec_1.0'][qid].subcategory || pollingPlace['sec_1.0'][qid].subcategory == '') {
+      pollingPlace['sec_1'][qid] = pollingPlace['sec_1.0'][qid];
+      delete pollingPlace['sec_1.0'][qid];
+    }
   }
   var site = pollingPlace;
   var mainParking = site.sec_1;
