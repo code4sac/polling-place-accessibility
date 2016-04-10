@@ -36,10 +36,16 @@ export default class PollingPlaceForm extends Component {
   render() {
     const styles = this.getStyles()
     const center = [38.6064550353, -121.385014929];
+
+    const north = [38.721915564, -121.390968136]
+    const east = [38.6648806855, -121.133173599]
+    const south = [38.2571979184, -121.303787278]
+    const west = [38.5026946913, -121.522912009]
+    const bounds = [north, east, south, west]
+
     return (
       <div style={styles.root}>
-        <span> Hi </span>
-        <Map center={center} zoom={13}>
+        <Map bounds={bounds} style={{height: '100%'}}>
           <TileLayer
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

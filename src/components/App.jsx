@@ -7,7 +7,7 @@ export class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			currentTab: 'form'
+			currentTab: 'map'
 		}
 	}
 
@@ -49,6 +49,9 @@ export class App extends Component {
 					height: '100%',
 					alignItems: 'center',
 				}
+			},
+			currentTab: {
+				height: 'calc( 100vh - 300px )'
 			}
 		}
 	}
@@ -78,7 +81,7 @@ export class App extends Component {
 						</div>
 					})}
 				</div>
-				<div>
+				<div style={styles.currentTab}>
 					{ renderedTab(this.state.currentTab) }
 				</div>
 	  		</div>
