@@ -3,7 +3,7 @@ import _ from 'lodash'
 import $ from 'jquery'
 
 export function getZipCode(address, cb) {
-  
+  let zip
   request
     .get(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM`)
     .end((err, res) => {
@@ -14,10 +14,12 @@ export function getZipCode(address, cb) {
         let zipCode = _.filter(address_components, (component) => {
           return _.includes(component.types, 'postal_code')
         })[0].long_name
-        console.log(zipCode)
+        // console.log(address, zipCode)
+        zip = zipCode
         return cb(null, zipCode)
       }
     })
+  return zip
 }
 
 export function getPollingPlaces(cb) {
@@ -25,36 +27,38 @@ export function getPollingPlaces(cb) {
   const sql = `SELECT answer FROM 1Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR WHERE question IN ('Polling Place ID','Polling Place address','City')`
 	const apikey = 'AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM'
   
-  $.ajax(`${url}?sql=${sql}&key=${apikey}`)
-    .done((req,res) => {
-      console.log(req, res)
-    })
-	// request
- //      .get('https://www.googleapis.com/fusiontables/v2/query')
- //      .query({"sql": `SELECT answer FROM 1Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR WHERE question IN ('Polling Place ID','Polling Place address','City')`}) //  GROUP BY ppid is not working
- //      .query({key: apikey})
- //      .end(function(err, res){
- //        if (err || !res.ok) {
- //        	throw new Error("There was an error!" + err)
- //        } else {
- //          let rows = res.body.rows
- //          let rowLength = rows.length
- //          let i = 0
- //          let returnVal = []
- //          for (let i = 0; i < rowLength; i += 3) {
- //            let r = {}
- //            r.ppid = rows[i][0]
- //            r.address = `${rows[i+1][0]} ${rows[i+2][0]}`
- //            r.zip = getZipCode(r.address, (zip) => {
- //              return zip
- //            })
- //            console.log(r.zip)
- //            returnVal.push(r)
- //          }
- //        	console.log("You got it!", returnVal)
- //          cb(returnVal)
- //        }
- //      });
+  // $.ajax(`${url}?sql=${sql}&key=${apikey}`)
+  //   .done((res,status) => {
+  //     console.log(res.rows, status)
+  //   })
+  let returnVal = []
+	request
+      .get('https://www.googleapis.com/fusiontables/v2/query')
+      .query({"sql": `SELECT answer FROM 1Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR WHERE question IN ('Polling Place ID','Polling Place address','City')`}) //  GROUP BY ppid is not working
+      .query({key: apikey})
+      .end(function(err, res){
+        if (err || !res.ok) {
+        	throw new Error("There was an error!" + err)
+        } else {
+          let rows = res.body.rows
+          let rowLength = rows.length
+          let i = 0
+          for (let i = 0; i < rowLength; i += 3) {
+            // console.log(rows[i][0], rows[i+1][0], rows[i+2][0])
+            let r = {}
+            r.ppid = rows[i][0]
+            r.address = `${rows[i+1][0]} ${rows[i+2][0]}`
+            getZipCode(r.address, (zip) => {
+              
+              r.zip = zip
+            })
+            // console.log(r)
+            returnVal.push(r)
+          }
+          cb(returnVal)
+        }
+      });
+      return returnVal
 
   // request
   //   .get('https://www.googleapis.com/fusiontables/v1/query')
