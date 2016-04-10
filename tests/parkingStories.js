@@ -3,7 +3,7 @@ import access from '../src/actions/fetchAccessibilityObject.js'
 import parking from '../src/actions/stories/parking.js'
 
 test('Parking stories', function(t){
-  t.plan(3);
+  t.plan(4);
   access(2135)
   .then(function(res){
     var story = parking(res['2135']);
@@ -12,4 +12,10 @@ test('Parking stories', function(t){
     t.ok(story.warnings.indexOf('Beware wheeling or walking behind other parked cars.') >= 0, 'Expected parking warning for ppid 2135');
     t.equals(story.warnings.length, 1, 'Expects only 1 parking warning for ppid 2135');
   })
+  access(3414)
+  .then(function(res){
+    var story = parking(res[3414]);
+    t.comment(JSON.stringify(story));
+    t.ok(story);
+  });
 });

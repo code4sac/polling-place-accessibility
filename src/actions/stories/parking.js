@@ -1,6 +1,11 @@
 module.exports = function(pollingPlace){
-  'use strict';
-  debugger;
+  //section 1.0 is supposed to mean 0-parking-mitigation, but is sometimes misapplied
+  for (var qid in pollingPlace['sec_1.0']) {
+    if (!pollingPlace['sec_1.0'][qid].subcategory || pollingPlace['sec_1.0'][qid].subcategory == '') {
+      pollingPlace['sec_1'][qid] = pollingPlace['sec_1.0'][qid];
+      delete pollingPlace['sec_1.0'][qid];
+    }
+  }
   var site = pollingPlace;
   var mainParking = site.sec_1;
   var moreParking = site['sec_1.2'];
@@ -16,7 +21,7 @@ module.exports = function(pollingPlace){
   if (hasVanParking && hasCarParking) {
     response.summary = 'There is a parking lot with safe and handicap-accessible van and car parking.';
   } else if (hasVanParking || hasCarParking) {
-    response.summary = `There is a parking lot with safe and handicap-accissible ${hasVanParking? 'van' : 'car'} parking, `;
+    response.summary = `There is a parking lot with safe and handicap-accessible ${hasVanParking? 'van' : 'car'} parking, `;
     if (hasVanParking >= 1 && hasCarParking >= 1) {
       let plural = ((hasVanParking && numCarParking >= 2) || (hasCarParking && numVanParking >= 2)) ? 's' : '';
       response.summary += `but only ${hasVanParking? numCarParking : numVanParking} space${plural}.`;

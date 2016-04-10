@@ -13,7 +13,6 @@ This app is intended to provide a resource for voting persons who need accessibi
 - Hans Chun 
 - [Brooks Newberry](https://github.com/brooksn) 
 - Nate Cornell 
-- Aheri Stanford-Asiyo
 
 ### Stakeholder Engagement
 - Courtney Bailey, Voter Registration & Elections

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PollingPlaceForm from './PollingPlaceForm'
 import Place from './PlaceForm'
 import _ from 'lodash'
+import FormMap from './FormMap'
+import AccessibilityStory from './AccessibilityStory'
 
 export class App extends Component {
 	constructor(props) {
@@ -65,7 +67,11 @@ export class App extends Component {
 			if (tab === 'map') {
 				return <Place />
 			} else if (tab === 'form') {
-				return <PollingPlaceForm />
+				return <div>
+					<PollingPlaceForm approxLat={this.props.approxLat} approxLong={this.props.approxLong} />
+			        <FormMap approxLat={this.props.approxLat} approxLong={this.props.approxLong} />
+			        <AccessibilityStory />
+				</div>
 			}
 		}
 
@@ -88,3 +94,8 @@ export class App extends Component {
 		);
 	}
 }
+
+App.defaultProps = {
+  approxLat: '38.5789777', //geocoding bias
+  approxLong: '-121.4829292', //geocoding bias
+};
