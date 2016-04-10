@@ -35,7 +35,6 @@ export default class PollingPlaceForm extends Component {
 
   render() {
     const styles = this.getStyles()
-    const center = [38.6064550353, -121.385014929];
 
     const north = [38.721915564, -121.390968136]
     const east = [38.6648806855, -121.133173599]
