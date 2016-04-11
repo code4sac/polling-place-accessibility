@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
+var ghPages = require('gulp-gh-pages');
 
 var sassPaths = [
   'bower_components/foundation-sites/scss',
@@ -16,6 +17,11 @@ gulp.task('sass', function() {
       browsers: ['last 2 versions', 'ie >= 9']
     }))
     .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('default', ['sass'], function() {
