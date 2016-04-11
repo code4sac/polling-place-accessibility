@@ -1,5 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/abustamam/polling-place-accessibility.png?label=ready&title=Ready)](http://waffle.io/abustamam/polling-place-accessibility)
-
 ## Project Information
 
 ### Project Name
@@ -21,7 +19,7 @@ This app is intended to provide a resource for voting persons who need accessibi
 
 ### Developer Documentation
 Clone the repo:
-`git clone https://github.com/abustamam/Voting`
+`git clone https://github.com/abustamam/polling-place-accessibility`
 
 Install dependencies:
 `npm install`
