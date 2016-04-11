@@ -1,15 +1,17 @@
 module.exports = function(pollingPlace){
   //section 1.0 is supposed to mean 0-parking-mitigation, but is sometimes misapplied
+  /*
   for (var qid in pollingPlace['sec_1.0']) {
     if (!pollingPlace['sec_1.0'][qid].subcategory || pollingPlace['sec_1.0'][qid].subcategory == '') {
       pollingPlace['sec_1'][qid] = pollingPlace['sec_1.0'][qid];
       delete pollingPlace['sec_1.0'][qid];
     }
   }
+  */
   var site = pollingPlace;
-  var mainParking = site.sec_1;
-  var moreParking = site['sec_1.2'];
-  var dropOff = site['sec_1.1'];
+  var mainParking = site['Parking Area'].root;
+  var moreParking = site['Parking Area']['2-Additional-Parking'];
+  var dropOff = site['Parking Area']['1-Drop-Off-Zone'];
   var response = { summary: 'There is no parking lot.', warnings: new Set() };
   
   var hasParkingLot = mainParking.answer === 'Yes' ? true : false;
