@@ -1,0 +1,157 @@
+import React, {Component} from 'react';
+import _ from 'lodash'
+import $ from 'jquery'
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import * as placeRequests from '../actions/placeRequests'
+import locationsData from './../datasets/locations.js'
+import store from '../stores/pollStore.js'
+import getAccessibility from '../actions/fetchAccessibilityObject.js'
+import createStoriesObject from '../actions/createStoriesObject.js'
+
+export default class PlaceMap extends Component {
+  constructor(props) {
+    // Junar API key: 365e06cd12a419135ae87d9f0ec0a8e60b25fbe3#sthash.qxY4OVZH
+    // Google API key: AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM
+    // Fusion Table key: 1Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR
+    // https://www.googleapis.com/fusiontables/v2/query?sql=SELECT%20*%20FROM%201Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR&key=AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM
+    super(props)
+
+    let places = []
+    _(locationsData).chunk(6).map((location) => {
+      const ppid = location[0][0]
+      const address = `${location[2][0]} ${location[3][0]}`
+      const latLng = [_.toNumber(location[4][0]), _.toNumber(location[5][0])]
+      const placeName = location[1][0]
+      const placeObj = {ppid, placeName, address, latLng}
+      places.push(placeObj)
+    }).value()
+    this.state = {places}
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if (nextState.ppid !== this.state.ppid) {
+      getAccessibility(nextState.ppid)
+        .then((accessibilityResponse) => {
+          var stories = createStoriesObject(accessibilityResponse[nextState.ppid]);
+          this.setState({acName: stories.Info.name, acPpid: stories.Info.ppid});
+          delete stories.Info;
+          this.setState({stories});
+      })
+    }
+  }
+
+  getStyles() {
+    return {
+      root: {
+        height: '100%',
+        width: '100%'
+      },
+      header: {
+        fontSize: 40,
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        textAlign: 'center'
+      },
+      beforeWarning: {
+        color: 'red'
+      },
+      warningListItem: {
+        listStyleType: 'none'
+      },
+      ul: {
+        margin: 0,
+        padding: 0,
+      }
+    }
+  }
+
+  handleMarkerClick(event, ppid, userPpid, placeName) {
+    
+    var markerPpid = ppid || 0;
+    var uPpid = userPpid || 0;
+    markerPpid = parseInt(ppid)
+    uPpid = parseInt(uPpid)
+    console.log('marker clicked with ppid: ' + ppid, uPpid);
+    if (markerPpid !== userPpid) {
+      //Change the caption and accessibility data
+      store.setPPID(markerPpid);
+      //Make clear this is definitely not the user's assigned polling place
+      //this.setState({caption: ''})
+    }
+    this.setState({ppid, placeName})
+  }
+
+  getStories() {
+    const styles = this.getStyles()
+    const stories = _.map(this.state.stories, (section, key) => {
+      const warnings = _.map(section.warnings, (val) => (
+        <li key={`${this.state.ppid}-${section}-warning`} className="accessibilityWarning" style={styles.warningListItem}>
+          <span style={styles.beforeWarning}>⚠   </span>
+          {val}
+        </li>)
+      )
+      return (
+      <li key={`${this.state.ppid}-${section}`}>
+          {`${key} for ${this.state.placeName}`}
+          <div>
+            {section.summary}
+            <ul>
+              {warnings}
+            </ul>
+          </div>
+        </li>
+        )
+    })
+
+    return <ul style={styles.ul}>
+      {stories}
+    </ul>
+  }
+
+  render() {
+    const styles = this.getStyles()
+
+    const north = [38.721915564, -121.390968136]
+    const east = [38.6648806855, -121.133173599]
+    const south = [38.2571979184, -121.303787278]
+    const west = [38.5026946913, -121.522912009]
+    const bounds = [north, east, south, west]
+
+    const markers = _.map(this.state.places, (location) => {
+      return (
+        <Marker 
+          color={this.props.light} 
+          key={'marker-'+location.ppid} 
+          ppid={location.ppid} 
+          userPpid={this.state.userPpid} 
+          position={location.latLng}
+          onLeafletClick={(e)=>this.handleMarkerClick(e, location.ppid, this.state.userPpid, location.placeName)}
+        >
+          <Popup key={'popup-'+location.ppid}>
+            {this.getStories()}
+          </Popup>
+        </Marker>
+      )
+    })
+
+    return (
+      <div style={styles.root}>
+        <h1 style={styles.header}>Polling Place Map</h1>
+        <Map bounds={bounds} style={{height: '100%'}}>
+          <TileLayer
+            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          />
+          {markers}
+        </Map>
+        <div>
+        </div>
+      </div>
+    )
+  }
+};
+
+PlaceMap.defaultProps = {
+  light: '#D3F2BE',
+  activeColor: '#37AF14'
+}
