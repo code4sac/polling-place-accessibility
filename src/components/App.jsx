@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PollingPlaceForm from './PollingPlaceForm'
-import Place from './PlaceForm'
+import PlaceMap from './PlaceMap'
 import _ from 'lodash'
 import FormMap from './FormMap'
 import AccessibilityStory from './AccessibilityStory'
+import Resources from './Resources'
+require('./../lib/tota11y.min.js')
 
 export class App extends Component {
 	constructor(props) {
@@ -29,7 +31,7 @@ export class App extends Component {
 				fontWeight: 300,
 				fontSize: 80,
 				textShadow: '2px 2px #333',
-				color: 'white',
+				color: '#949494',
 				backgroundImage: `url(${require('./../assets/images/sacCapitol.jpg')})`,
 				backgroundSize: '100% 100%',
     			backgroundRepeat: 'no-repeat',
@@ -44,7 +46,11 @@ export class App extends Component {
 			tab: (tab) => {
 				return {
 					cursor: 'pointer',
-					background: tab === this.state.currentTab ? 'green' : 'white',
+					background: tab === this.state.currentTab ? 'white' : 'rgba(1, 1, 1, .25)',
+					boxShadow: tab === this.state.currentTab ? '' : '0px -2px 5px 0px #777 inset',
+					borderTop: '1px solid black',
+					borderLeft: '.5px solid black',
+					borderRight: '.5px solid black',
 					display: 'flex',
 					flexGrow: 1,
 					justifyContent: 'space-around',
@@ -60,18 +66,20 @@ export class App extends Component {
 
 	render() {
 
-		const tabs = ['map', 'form']
+		const tabs = ['map', 'form', 'resources', 'about']
 		const styles = this.getStyles()
 
 		let renderedTab = (tab) => {
 			if (tab === 'map') {
-				return <Place />
+				return <PlaceMap />
 			} else if (tab === 'form') {
 				return <div>
 					<PollingPlaceForm approxLat={this.props.approxLat} approxLong={this.props.approxLong} />
 			        <FormMap approxLat={this.props.approxLat} approxLong={this.props.approxLong} />
 			        <AccessibilityStory />
 				</div>
+			} else if (tab === 'resources') {
+				return <Resources/>
 			}
 		}
 

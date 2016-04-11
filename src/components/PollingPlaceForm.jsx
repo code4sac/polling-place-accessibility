@@ -32,9 +32,10 @@ export default class PollingPlaceForm extends Component {
         flexDirection: 'column'
       },
       header: {
-        fontSize: '2.5rem',
+        fontSize: 40,
         fontWeight: 'normal',
         fontStyle: 'normal',
+        textAlign: 'center'
       },
       form: {
         display: 'flex',
@@ -63,7 +64,7 @@ export default class PollingPlaceForm extends Component {
       <div className="polling-place-form-row row">
         <div className="medium-12 columns" style={styles.form}>
           <div>
-            <h2 style={styles.header}>Polling Place Form</h2>
+            <h1 style={styles.header}>Polling Place Form</h1>
           </div>
           <form id="polling-place-form" data-abide>
             <div style={styles.form}>
