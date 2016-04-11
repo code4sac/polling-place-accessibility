@@ -14,8 +14,7 @@ This app is intended to provide a resource for voting persons who need accessibi
 
 ### Stakeholder Engagement
 - Courtney Bailey, Voter Registration & Elections
-- Guy Sperry
-- [Include any nonprofits or other stakeholders you engaged in the development your project]
+- Guy Sperry, cool data guy
 
 ### Developer Documentation
 Clone the repo:
