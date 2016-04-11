@@ -8,6 +8,8 @@ import Resources from './Resources'
 import About from './About'
 require('./../lib/tota11y.min.js')
 
+const sacImage = require('./../assets/images/sacCapitol.jpg')
+
 export class App extends Component {
 	constructor(props) {
 		super(props)
@@ -33,7 +35,7 @@ export class App extends Component {
 				fontSize: 80,
 				textShadow: '2px 2px #333',
 				color: '#949494',
-				backgroundImage: `url(${require('./../assets/images/sacCapitol.jpg')})`,
+				backgroundImage: `url("https://raw.githubusercontent.com/abustamam/polling-place-accessibility/master/public/images/sacCapitol.jpg")`,
 				backgroundSize: '100% 100%',
     			backgroundRepeat: 'no-repeat',
 			},
