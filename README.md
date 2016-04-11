@@ -4,7 +4,7 @@
 Polling Place Accessibility App
 
 ### Project Description
-This app is intended to provide a resource for voting persons who need accessibility for voting venues.
+This app is intended to provide a resource for voting persons who have specific needs for voting venues.
 
 ### Team Members
 - Rasheed Bustamam rasheed.bustamam@gmail.com
