@@ -2,12 +2,16 @@ var and = require('join-component');
 
 var paths = function(pollingPlace) {
   var response = { summary: 'There are no surveyed paths.', warnings: [] };
+  for (var subcat in pollingPlace['Path of Travel']) {
+    var sub = pollingPlace['Path of Travel'][subcat];
+    pollingPlace['Path of Travel'][subcat.replace(/^\d+-/gi, "")] = sub;
+  }
   
-  var parking = pollingPlace['Path of Travel']['1-Parking'];
-  var pubTransit = pollingPlace['Path of Travel']['2-Public-Transportation'];
-  var dropOff = pollingPlace['Path of Travel']['3-Drop-Off-Zone'];
-  var propertyLine = pollingPlace['Path of Travel']['4-Property-Line'];
-  var other = pollingPlace['Path of Travel']['5-Other'];
+  var parking = pollingPlace['Path of Travel']['Parking'];
+  var pubTransit = pollingPlace['Path of Travel']['Public-Transportation'];
+  var dropOff = pollingPlace['Path of Travel']['Drop-Off-Zone'];
+  var propertyLine = pollingPlace['Path of Travel']['Property-Line'];
+  var other = pollingPlace['Path of Travel']['Other'];
   var subCategories = [parking, pubTransit, dropOff, propertyLine, other];
   var andPaths = [];
   var noPaths = true;
