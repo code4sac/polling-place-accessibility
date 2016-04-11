@@ -145,7 +145,7 @@ export default class Resources extends Component {
 							width="380"
 							height="206"
 							
-							src={"https://raw.githubusercontent.com/abustamam/polling-place-accessibility/master/public/images/I_Voted_Sticker.JPG"} 
+							src={"https://raw.githubusercontent.com/abustamam/polling-place-accessibility/layout-test/public/images/I-Voted-Proof-rev-copy.jpg"} 
 							alt="I voted sticker: attritbution Alicia Chan"
 						/>
 					</a>
