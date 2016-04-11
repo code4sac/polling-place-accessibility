@@ -66,13 +66,13 @@ export class App extends Component {
 
 	render() {
 
-		const tabs = ['map', 'form', 'resources', 'about']
+		const tabs = ['map', 'find your polling place', 'resources', 'about']
 		const styles = this.getStyles()
 
 		let renderedTab = (tab) => {
 			if (tab === 'map') {
 				return <PlaceMap />
-			} else if (tab === 'form') {
+			} else if (tab === 'find your polling place') {
 				return <div>
 					<PollingPlaceForm approxLat={this.props.approxLat} approxLong={this.props.approxLong} />
 			        <FormMap approxLat={this.props.approxLat} approxLong={this.props.approxLong} />

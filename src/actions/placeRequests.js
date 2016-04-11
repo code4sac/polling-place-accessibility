@@ -24,7 +24,7 @@ export function getZipCode(address, cb) {
 
 export function getPollingPlaces(cb) {
   const url = 'https://www.googleapis.com/fusiontables/v2/query'
-  const sql = `SELECT answer FROM 1Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR WHERE question IN ('Polling Place ID','Polling Place address','City')`
+  const sql = `SELECT answer FROM 1Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR WHERE question IN ('Polling Place ID','Polling Place address', 'Polling Place name', 'City')`
 	const apikey = 'AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM'
   
   // $.ajax(`${url}?sql=${sql}&key=${apikey}`)

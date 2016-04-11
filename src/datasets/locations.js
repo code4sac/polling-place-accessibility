@@ -1,6 +1,9 @@
-const locations = [
+ const locations = [
   [
    "15"
+  ],
+  [
+   "abundant life assemblies"
   ],
   [
    "6861 24th st"
@@ -18,6 +21,9 @@ const locations = [
    "418"
   ],
   [
+   "Albert Schweitzer Elementary School"
+  ],
+  [
    "4350 Glenridge Dr"
   ],
   [
@@ -31,6 +37,9 @@ const locations = [
   ],
   [
    "416"
+  ],
+  [
+   "American River Community Church"
   ],
   [
    "3300 Walnut Ave"
@@ -48,6 +57,9 @@ const locations = [
    "3267"
   ],
   [
+   "Antioch Progressive Church"
+  ],
+  [
    "7650 Amber St."
   ],
   [
@@ -61,6 +73,9 @@ const locations = [
   ],
   [
    "353"
+  ],
+  [
+   "Arcade Fundamental Middle School"
   ],
   [
    "3500 Edison Ave"
@@ -78,6 +93,9 @@ const locations = [
    "477"
   ],
   [
+   "Arden Manor Rec & Park District"
+  ],
+  [
    "1415 Rushden Dr"
   ],
   [
@@ -91,6 +109,9 @@ const locations = [
   ],
   [
    "2135"
+  ],
+  [
+   "Arden Way Apartments"
   ],
   [
    "5200 Arden Way"
@@ -108,6 +129,9 @@ const locations = [
    "3371"
   ],
   [
+   "Arlene Hein Elementary School"
+  ],
+  [
    "6820 Bellaterra Dr"
   ],
   [
@@ -121,6 +145,9 @@ const locations = [
   ],
   [
    "3444"
+  ],
+  [
+   "Arnold Adreani Elementary School"
   ],
   [
    "9927 Wildhawk Dr"
@@ -138,6 +165,9 @@ const locations = [
    "2890"
   ],
   [
+   "Arthur C. Butler Elementary School"
+  ],
+  [
    "9180 Brown Rd"
   ],
   [
@@ -151,6 +181,9 @@ const locations = [
   ],
   [
    "966"
+  ],
+  [
+   "Atonement Lutheran Church - Multipurpose Room"
   ],
   [
    "9242 Kiefer Blvd"
@@ -168,6 +201,9 @@ const locations = [
    "31"
   ],
   [
+   "Bell Ave Elementary School"
+  ],
+  [
    "1900 Bell Ave"
   ],
   [
@@ -181,6 +217,9 @@ const locations = [
   ],
   [
    "771"
+  ],
+  [
+   "Belle Cooledge Community Center"
   ],
   [
    "5699 S Land Park Dr"
@@ -198,6 +237,9 @@ const locations = [
    "2981"
   ],
   [
+   "Bethany Presbyterian Church"
+  ],
+  [
    "5625 24th St"
   ],
   [
@@ -211,6 +253,9 @@ const locations = [
   ],
   [
    "3120"
+  ],
+  [
+   "Bible Chapel"
   ],
   [
    "3602 65th St"
@@ -228,6 +273,9 @@ const locations = [
    "747"
   ],
   [
+   "Bret Harte School"
+  ],
+  [
    "2751 9th Ave"
   ],
   [
@@ -241,6 +289,9 @@ const locations = [
   ],
   [
    "3514"
+  ],
+  [
+   "Brookdale At Folsom"
   ],
   [
    "780 Harrington Way"
@@ -258,6 +309,9 @@ const locations = [
    "1702"
   ],
   [
+   "C W Dillard Elementary School"
+  ],
+  [
    "9721 Dillard Road"
   ],
   [
@@ -271,6 +325,9 @@ const locations = [
   ],
   [
    "666"
+  ],
+  [
+   "Caleb Greenwood Elementary School"
   ],
   [
    "5457 Carlson Dr"
@@ -288,6 +345,9 @@ const locations = [
    "735"
   ],
   [
+   "California Middle School"
+  ],
+  [
    "1600 Vallejo Way"
   ],
   [
@@ -301,6 +361,9 @@ const locations = [
   ],
   [
    "3581"
+  ],
+  [
+   "California Wedding Hall"
   ],
   [
    "7323 Home Leisure Plz"
@@ -318,6 +381,9 @@ const locations = [
    "499"
   ],
   [
+   "Campus Commons Clubhouse Tile Room"
+  ],
+  [
    "650 Campus Commons Dr"
   ],
   [
@@ -331,6 +397,9 @@ const locations = [
   ],
   [
    "3479"
+  ],
+  [
+   "Carroll Elementary School"
   ],
   [
    "10325 Stathos Dr"
@@ -348,6 +417,9 @@ const locations = [
    "788"
   ],
   [
+   "Centennial United Methodist Church"
+  ],
+  [
    "5401 Freeport Blvd"
   ],
   [
@@ -361,6 +433,9 @@ const locations = [
   ],
   [
    "2384"
+  ],
+  [
+   "Center Unified School District"
   ],
   [
    "8408 Watt Ave"
@@ -378,6 +453,9 @@ const locations = [
    "16"
   ],
   [
+   "Century Chapel C.M.E Church"
+  ],
+  [
    "2821 29th Ave"
   ],
   [
@@ -391,6 +469,9 @@ const locations = [
   ],
   [
    "3547"
+  ],
+  [
+   "Cesar Chavez Intermediate School"
   ],
   [
    "7500 32nd St"
@@ -408,6 +489,9 @@ const locations = [
    "3075"
   ],
   [
+   "Charles Mack Elementary School"
+  ],
+  [
    "4701 Brookfield Dr"
   ],
   [
@@ -421,6 +505,9 @@ const locations = [
   ],
   [
    "159"
+  ],
+  [
+   "Charles Peck Elementary School"
   ],
   [
    "6230  Rutland Dr"
@@ -438,6 +525,9 @@ const locations = [
    "936"
   ],
   [
+   "christ temple apostolic church"
+  ],
+  [
    "9000 LA Riviera dr"
   ],
   [
@@ -451,6 +541,9 @@ const locations = [
   ],
   [
    "1146"
+  ],
+  [
+   "Common Ground, A Covenant Church"
   ],
   [
    "8355 Arroyo Vista Dr"
@@ -468,6 +561,9 @@ const locations = [
    "3453"
   ],
   [
+   "Consumnes Fire Station #72"
+  ],
+  [
    "10035 Atkins Dr"
   ],
   [
@@ -481,6 +577,9 @@ const locations = [
   ],
   [
    "2821"
+  ],
+  [
+   "Consumnes Fire Station #73"
   ],
   [
    "9607 Bond Rd"
@@ -498,6 +597,9 @@ const locations = [
    "1705"
   ],
   [
+   "Cooperative Extension"
+  ],
+  [
    "4137 Branch Center Rd"
   ],
   [
@@ -511,6 +613,9 @@ const locations = [
   ],
   [
    "432"
+  ],
+  [
+   "Cottage Elementary School"
   ],
   [
    "2221 Morse Ave"
@@ -528,6 +633,9 @@ const locations = [
    "3239"
   ],
   [
+   "Elliot Ranch Elementary School"
+  ],
+  [
    "10000 E Taron Dr"
   ],
   [
@@ -541,6 +649,9 @@ const locations = [
   ],
   [
    "2814"
+  ],
+  [
+   "Emeritus at Laguna Creek"
   ],
   [
    "6727 Laguna Park Dr"
@@ -558,6 +669,9 @@ const locations = [
    "3537"
   ],
   [
+   "Firehouse Community Center"
+  ],
+  [
    "810 Grand Ave"
   ],
   [
@@ -571,6 +685,9 @@ const locations = [
   ],
   [
    "1874"
+  ],
+  [
+   "Gold River Discovery Center School"
   ],
   [
    "2200 Roaring Camp Dr"
@@ -588,6 +705,9 @@ const locations = [
    "3403"
   ],
   [
+   "Lakeside Church"
+  ],
+  [
    "745 Oak Avenue Pkwy"
   ],
   [
@@ -601,6 +721,9 @@ const locations = [
   ],
   [
    "3019"
+  ],
+  [
+   "Oak Hills Church"
   ],
   [
    "1100 Blue Ravine Rd"
@@ -618,6 +741,9 @@ const locations = [
    "1168"
   ],
   [
+   "Valley High School"
+  ],
+  [
    "6300 Ehrhardt Ave"
   ],
   [
@@ -631,6 +757,9 @@ const locations = [
   ],
   [
    "12"
+  ],
+  [
+   "All Saints Episcopal Church"
   ],
   [
    "2076 Sutterville Rd"
@@ -648,6 +777,9 @@ const locations = [
    "2270"
   ],
   [
+   "Antelope Hills S D A Church"
+  ],
+  [
    "4219 Antelope Rd"
   ],
   [
@@ -661,6 +793,9 @@ const locations = [
   ],
   [
    "1924"
+  ],
+  [
+   "Antelope Meadows Elementary School"
   ],
   [
    "8343 Palmerson Dr"
@@ -678,6 +813,9 @@ const locations = [
    "498"
   ],
   [
+   "Arden Christian Church"
+  ],
+  [
    "4300 Las Cruces Way"
   ],
   [
@@ -691,6 +829,9 @@ const locations = [
   ],
   [
    "1423"
+  ],
+  [
+   "Arlington Heights Elementary School"
   ],
   [
    "6401 Trenton Way"
@@ -708,6 +849,9 @@ const locations = [
    "200"
   ],
   [
+   "Arthur S. Dudley Elementary School"
+  ],
+  [
    "8000 Aztec Way"
   ],
   [
@@ -721,6 +865,9 @@ const locations = [
   ],
   [
    "2265"
+  ],
+  [
+   "Barbara Comstock Morse Elementary School"
   ],
   [
    "7000 Cranleigh Ave"
@@ -738,6 +885,9 @@ const locations = [
    "1342"
   ],
   [
+   "Blanche Sprentz Elementary School"
+  ],
+  [
    "249 Flower Dr"
   ],
   [
@@ -751,6 +901,9 @@ const locations = [
   ],
   [
    "3561"
+  ],
+  [
+   "Broadstone Racquet Club"
   ],
   [
    "820 Halidon Way"
@@ -768,6 +921,9 @@ const locations = [
    "496"
   ],
   [
+   "Campus Commons Retirememt"
+  ],
+  [
    "22 Cadillac Dr"
   ],
   [
@@ -781,6 +937,9 @@ const locations = [
   ],
   [
    "3414"
+  ],
+  [
+   "Carefree Senior Living"
   ],
   [
    "5601 Natomas Blvd"
@@ -798,6 +957,9 @@ const locations = [
    "1475"
   ],
   [
+   "Carmichael S D A Church"
+  ],
+  [
    "4600 Winding Way"
   ],
   [
@@ -811,6 +973,9 @@ const locations = [
   ],
   [
    "820"
+  ],
+  [
+   "Caroline Wenzel School"
   ],
   [
    "6870 Greenhaven Dr"
@@ -828,6 +993,9 @@ const locations = [
    "471"
   ],
   [
+   "Choices Charter School"
+  ],
+  [
    "4425 Laurelwood way"
   ],
   [
@@ -841,6 +1009,9 @@ const locations = [
   ],
   [
    "3340"
+  ],
+  [
+   "Churchill Downs Apartments"
   ],
   [
    "8155 Waterman Rd"
@@ -858,6 +1029,9 @@ const locations = [
    "549"
   ],
   [
+   "Citrus Heights Friends Church"
+  ],
+  [
    "7070 Woodmore Oaks Drive"
   ],
   [
@@ -871,6 +1045,9 @@ const locations = [
   ],
   [
    "426"
+  ],
+  [
+   "Cottage Way Christian Church"
   ],
   [
    "2117 Cottage Way"
@@ -888,6 +1065,9 @@ const locations = [
    "2809"
   ],
   [
+   "Creekside Oaks Retirement Community"
+  ],
+  [
    "1715 Creekside Dr"
   ],
   [
@@ -901,6 +1081,9 @@ const locations = [
   ],
   [
    "392"
+  ],
+  [
+   "Cypress Avenue Baptist Church"
   ],
   [
    "5709 Cypress Ave"
@@ -918,6 +1101,9 @@ const locations = [
    "377"
   ],
   [
+   "El Camino Baptist Church"
+  ],
+  [
    "2809 El Camino Ave"
   ],
   [
@@ -931,6 +1117,9 @@ const locations = [
   ],
   [
    "1942"
+  ],
+  [
+   "Eskaton Village Carmichael"
   ],
   [
    "3939 Walnut Ave"
@@ -948,6 +1137,9 @@ const locations = [
    "671"
   ],
   [
+   "Ethel Macleod Hart Senior Center"
+  ],
+  [
    "915 27th Street"
   ],
   [
@@ -961,6 +1153,9 @@ const locations = [
   ],
   [
    "1712"
+  ],
+  [
+   "Florin United Methodist Church"
   ],
   [
    "7560 Florin Rd"
@@ -978,6 +1173,9 @@ const locations = [
    "3360"
   ],
   [
+   "Folsom Veterans Hall"
+  ],
+  [
    "1300 Forrest Street"
   ],
   [
@@ -991,6 +1189,9 @@ const locations = [
   ],
   [
    "1165"
+  ],
+  [
+   "Galt Seventh Day Adventist"
   ],
   [
    "619 Myrtle Street"
@@ -1008,6 +1209,9 @@ const locations = [
    "56"
   ],
   [
+   "American Lakes Elementary School"
+  ],
+  [
    "2800 Stonecreek Dr"
   ],
   [
@@ -1021,6 +1225,9 @@ const locations = [
   ],
   [
    "3059"
+  ],
+  [
+   "Antelope Crossing Middle School"
   ],
   [
    "9200 Palmerson Dr"
@@ -1038,6 +1245,9 @@ const locations = [
    "21"
   ],
   [
+   "Sacramento High Charter School"
+  ],
+  [
    "2315 34th Street"
   ],
   [
@@ -1051,6 +1261,9 @@ const locations = [
   ],
   [
    "3294"
+  ],
+  [
+   "Sandra J. Gallardo Elementary School"
   ],
   [
    "775 Russi Rd"
@@ -1068,6 +1281,9 @@ const locations = [
    "268"
   ],
   [
+   "Woodridge Elementary School"
+  ],
+  [
    "5761 Brett Dr"
   ],
   [
@@ -1081,6 +1297,9 @@ const locations = [
   ],
   [
    "1526"
+  ],
+  [
+   "Sacramento Metro  Fire Station #106"
   ],
   [
    "2200 Park Towne Cir"
@@ -1098,6 +1317,9 @@ const locations = [
    "952"
   ],
   [
+   "Sequoia Elementary School"
+  ],
+  [
    "3333 Rosemont Dr"
   ],
   [
@@ -1113,16 +1335,19 @@ const locations = [
    "802"
   ],
   [
+   "Bowling Green Elementary School"
+  ],
+  [
    "4211 Turnbridge Dr"
   ],
   [
    "Sacramento"
   ],
   [
-   "38.5033512802"
+   "38.5033512802915"
   ],
   [
-   "-121.458408919"
+   "-121.4584089197085"
   ]
  ]
 
