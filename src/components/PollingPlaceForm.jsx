@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import pollingPlaceRequests from '../actions/pollingPlaceRequests';
+import _ from 'lodash'
 import store from '../stores/pollStore.js';
 import preFetchedPollingPlaces from '../map/preFetchedPollingPlaces.js'
 
 export default class PollingPlaceForm extends Component {
   constructor(props) {
-    // Junar API key: 365e06cd12a419135ae87d9f0ec0a8e60b25fbe3#sthash.qxY4OVZH
-    // Google API key: AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM
-    // Fusion Table key: 1Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR
-    // https://www.googleapis.com/fusiontables/v2/query?sql=SELECT%20*%20FROM%201Wps1_Vj4dkNiAIozL47QINAYAhonMgfVf0F3aPyR&key=AIzaSyDRoMwLIG_AcxMeha5PIv9lWnM0AwWRsCM
-    super(props);
+    super(props)
     this.state = {
       userPpid: null,
       house: null,
@@ -20,19 +17,69 @@ export default class PollingPlaceForm extends Component {
       address: null
     };
   }
+
+  getStyles() {
+    return {
+      root: {
+
+      },
+      form: {
+        display: 'flex',
+        flexDirection: 'column'
+      },
+      header: {
+        fontSize: 40,
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        textAlign: 'center'
+      },
+      form: {
+        display: 'flex',
+        flexDirection: 'column',
+        padding: 10,
+      },
+      formGroup: {
+        display: 'flex',
+        flexDirection: 'column',
+        marginTop: 10,
+        minHeight: 50
+      },
+      formInput: {
+        height: '2.4375rem',
+        fontSize: '1rem'
+      }
+    }
+  }
+
   render() {
+    const styles = this.getStyles()
     var caption = this.state.caption || this.props.caption;
     var addressLink = this.state.address ? <a href={'http://maps.google.com/?q='+encodeURI(this.state.address)}>➶</a> : null;
-  
+
     return (
       <div className="polling-place-form-row row">
-        <div className="medium-12 columns">
-          <h2>Polling Place Form</h2>
+        <div className="medium-12 columns" style={styles.form}>
+          <div>
+            <h1 style={styles.header}>Polling Place Form</h1>
+          </div>
           <form id="polling-place-form" data-abide>
-            <label>House Number <input type="number" name="house" id="house" placeholder="e.g. '1234'" required onChange={this.handleHouseChange.bind(this)}></input></label>
-            <label>5-Digit Zip Code <input type="number" name="zip" id="zip" placeholder="e.g. '54321'" required onChange={this.handleZipChange.bind(this)}></input></label>
-            <label>Date of Birth <small>(MM/DD/YYYY)</small><input type="date" placeholder="MM/DD/YYYY" name="dob" id="dob" required onChange={this.handleDobChange.bind(this)}></input></label>
-            <input type="submit" value="Submit" onClick={this.handleSubmit.bind(this)}></input>
+            <div style={styles.form}>
+              <div style={styles.formGroup}>
+                <label htmlFor="house">House Number</label>
+                <input style={styles.formInput} type="number" name="house" id="house" placeholder="e.g. '1234'" required onChange={this.handleHouseChange.bind(this)}/>
+              </div>
+              <div style={styles.formGroup}>
+                <label htmlFor="zip">5-Digit Zip Code</label>
+                <input style={styles.formInput} type="number" name="zip" id="zip" placeholder="e.g. '54321'" required onChange={this.handleZipChange.bind(this)}/>
+              </div>
+              <div style={styles.formGroup}>
+                <label htmlFor="dob">Date of Birth <small>(MM/DD/YYYY)</small></label>
+                <input style={styles.formInput} type="date" placeholder="MM/DD/YYYY" name="dob" id="dob" required onChange={this.handleDobChange.bind(this)}/>
+              </div>
+              <div style={styles.formGroup}>
+                <button style={styles.formInput} onClick = {(e) => this.handleSubmit(e)}>Submit</button>
+              </div>
+            </div>
           </form>
           <p>{caption} {addressLink}</p>
         </div>
