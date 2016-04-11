@@ -59,7 +59,7 @@ export default class PollingPlaceForm extends Component {
     const styles = this.getStyles()
     var caption = this.state.caption || this.props.caption;
     var addressLink = this.state.address ? <a href={'http://maps.google.com/?q='+encodeURI(this.state.address)}>➶</a> : null;
-  
+
     return (
       <div className="polling-place-form-row row">
         <div className="medium-12 columns" style={styles.form}>
@@ -69,15 +69,15 @@ export default class PollingPlaceForm extends Component {
           <form id="polling-place-form" data-abide>
             <div style={styles.form}>
               <div style={styles.formGroup}>
-                <label>House Number</label>
+                <label for="house">House Number</label>
                 <input style={styles.formInput} type="number" name="house" id="house" placeholder="e.g. '1234'" required onChange={this.handleHouseChange.bind(this)}/>
               </div>
               <div style={styles.formGroup}>
-                <label>5-Digit Zip Code</label>
+                <label for="zip">5-Digit Zip Code</label>
                 <input style={styles.formInput} type="number" name="zip" id="zip" placeholder="e.g. '54321'" required onChange={this.handleZipChange.bind(this)}/>
               </div>
               <div style={styles.formGroup}>
-                <label>Date of Birth <small>(MM/DD/YYYY)</small></label>
+                <label for="dob">Date of Birth <small>(MM/DD/YYYY)</small></label>
                 <input style={styles.formInput} type="date" placeholder="MM/DD/YYYY" name="dob" id="dob" required onChange={this.handleDobChange.bind(this)}/>
               </div>
               <div style={styles.formGroup}>
