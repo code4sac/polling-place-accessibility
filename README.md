@@ -35,5 +35,7 @@ Open up in your web browser:
 
 Please read [the project wiki](https://github.com/abustamam/polling-place-accessibility/wiki), your questions may be answered there.
 
-### Additional Information (optional)
-[Include any additional information that you would like the judges to know about your project]
+### Additional Information
+If we win, we will donate 20% of our earnings to the [American Association of People with Disabilities (AAPD)](http://www.aapd.com/)
+
+Make a donation [here](https://aapd.kindful.com/?campaign=238334)
