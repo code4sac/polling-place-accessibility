@@ -1,14 +1,7 @@
 module.exports = function(pollingPlace){
 
-  for (var qid in pollingPlace['sec_4.0']) {
-    if (!pollingPlace['sec_4.0'][qid].subcategory || pollingPlace['sec_4.0'][qid].subcategory == '') {
-      pollingPlace['sec_4'][qid] = pollingPlace['sec_4.0'][qid];
-      delete pollingPlace['sec_4.0'][qid];
-    }
-  }
-
   var site = pollingPlace;
-  var votingArea = site.sec_4;
+  var votingArea = site['The Voting Area'].root;
   var response = { summary: 'No voting area details.', warnings: new Set() };
 
   var stablePath = ( votingArea.qid_1.answer === 'Yes' ) ? true : false;
