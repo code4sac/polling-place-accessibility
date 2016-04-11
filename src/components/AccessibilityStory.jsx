@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import store from '../stores/pollStore.js';
 import getAccessibility from '../actions/fetchAccessibilityObject.js'
 import createStoriesObject from '../actions/createStoriesObject.js'
+import $ from 'jquery'
 
 export default class AccessibilityStory extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ export default class AccessibilityStory extends Component {
     }
     return (
       <div>
-        <h3>{name? `Accessibility of ${name}` : 'Search or select a site to view accessibility information.'}</h3>
+        <h2>{name? `Accessibility of ${name}` : 'Search or select a site to view accessibility information.'}</h2>
         <ul className="accordion" data-accordion>
           {stories}
         </ul>
@@ -52,7 +53,7 @@ export default class AccessibilityStory extends Component {
   componentDidMount() {
     console.log('this getStoreState: ' + this.getStoreState);
     store.observeChanges(this.getStoreState.bind(this));
-    $(document).foundation();
+    // $(document).foundation();
   }
   componentWillUnmount() {
     store.unobserveChanges(this.getStoreState.bind(this));
@@ -73,7 +74,7 @@ export default class AccessibilityStory extends Component {
       this.setState({ppid: o.ppid, stories: null, ppName: o.ppName});
     }
   }
-  
+
 }
 
 AccessibilityStory.defaultProps = {
