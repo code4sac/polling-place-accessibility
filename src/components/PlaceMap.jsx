@@ -116,7 +116,7 @@ export default class PlaceMap extends Component {
     const markers = _.map(this.state.places, (location) => {
       return (
         <Marker
-          color={this.props.light}
+          color={this.state.ppid === location.ppid ? this.props.activeColor : this.props.light}
           key={'marker-'+location.ppid}
           ppid={location.ppid}
           userPpid={this.state.userPpid}

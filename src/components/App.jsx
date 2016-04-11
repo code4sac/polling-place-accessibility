@@ -5,6 +5,7 @@ import _ from 'lodash'
 import FormMap from './FormMap'
 import AccessibilityStory from './AccessibilityStory'
 import Resources from './Resources'
+import About from './About'
 require('./../lib/tota11y.min.js')
 
 export class App extends Component {
@@ -80,6 +81,8 @@ export class App extends Component {
 				</div>
 			} else if (tab === 'resources') {
 				return <Resources/>
+			} else if (tab === 'about') {
+				return <About/>
 			}
 		}
 
