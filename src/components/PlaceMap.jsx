@@ -85,13 +85,13 @@ export default class PlaceMap extends Component {
     const styles = this.getStyles()
     const stories = _.map(this.state.stories, (section, key) => {
       const warnings = _.map(section.warnings, (val) => (
-        <li key={`${this.state.ppid}-${section}-warning`} className="accessibilityWarning" style={styles.warningListItem}>
+        <li key={`${this.state.ppid}-${key}-warning`} className="accessibilityWarning" style={styles.warningListItem}>
           <span style={styles.beforeWarning}>⚠   </span>
           {val}
         </li>)
       )
       return (
-      <li key={`${this.state.ppid}-${section}`}>
+      <li key={`${this.state.ppid}-${key}`}>
           {`${key} for ${this.state.placeName}`}
           <div>
             {section.summary}

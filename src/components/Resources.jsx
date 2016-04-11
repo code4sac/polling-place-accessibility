@@ -72,9 +72,6 @@ export default class Resources extends Component {
 
 			<div style={styles.info}>
 				<h2 id="our-mission" style={styles.headers}>Our Mission</h2>
-				<div>
-					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
-				</div>
 				<br/>
 				<h3 style={styles.headers}>People First</h3>
 				<p>Sacramento County Voter Registration and Elections staff understands that voters 
@@ -89,13 +86,13 @@ export default class Resources extends Component {
 				<h3 style={styles.headers}>Accessible Voting Supplies</h3>
 				<p>All polling places have a wheelchair accessible voting booth and a magnifying glass to ensure
 				voters with specific needs have the tools necessary to cast their vote.</p>
+				<div>
+					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
+				</div>
 			</div>
 
 			<div style={styles.info}>
 				<h2 id="voting-options" style={styles.headers}>Voting Options</h2>
-				<div>
-					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
-				</div>
 				<br/>
 				<h3 style={styles.headers}>Polling Place</h3>
 				<br/>
@@ -128,13 +125,13 @@ export default class Resources extends Component {
 				<p>Starting 29 days before an election, voters may come to the Sacramento County Voter
 				Registration and Elections office during business hours and vote. This service is provided through 
 				the close of polls at 8:00 p.m. Election Day.</p>
+				<div>
+					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
+				</div>
 			</div>
 
 			<div style={styles.info}>
 				<h2 id="election-resources" style={styles.headers}>Election Resources</h2>
-				<div>
-					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
-				</div>
 				<br/>
 				<h3 style={styles.headers}>Sample Ballot Booklet</h3>
 				<p>Before every election, a sample ballot booklet is
@@ -166,13 +163,13 @@ export default class Resources extends Component {
 				also provides local Measures in audio format.
 				These materials may be requested by contacting
 				our office at (916) 875-6053. </p>
+				<div>
+					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
+				</div>
 			</div>
 
 			<div>
 				<h2 id="other-info" style={styles.headers}>Other Info</h2>
-				<div>
-					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
-				</div>
 				<br/>
 				<h3 style={styles.headers}>Where do I register to vote?</h3>
 				<ul>
@@ -208,13 +205,13 @@ export default class Resources extends Component {
 					<li>Toll Free Number: 1-800-762-8019</li>
 					<li>California Relay Service: 1-888-877-5379</li>
 				</ul>
+				<div>
+					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
+				</div>
 			</div>
 
 			<div style={styles.info}>
 				<h2 id="office-location" style={styles.headers}>Office Location:</h2>
-				<div>
-				<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
-				</div>
 				<br/>
 				<span>Voter Registration and Elections</span>
 				<span>7000 65th Street, Suite A</span>
@@ -225,8 +222,10 @@ export default class Resources extends Component {
 				<span>8:00 a.m. - 5:00 p.m.</span>
 				<span>Monday through Friday</span>
 				<span>(Excluding Holidays)</span>
+				<div>
+					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
+				</div>
 			</div>
-
 		</div>)
 	}
 }
