@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "babel-core": "^6.6.5",
+    "join-component": "^1.1.0",
     "leaflet": "^0.7.7",
     "lodash.has": "^4.3.0",
     "lodash.set": "^4.1.0",
