@@ -65,15 +65,15 @@ export default class PollingPlaceForm extends Component {
           <form id="polling-place-form" data-abide>
             <div style={styles.form}>
               <div style={styles.formGroup}>
-                <label for="house">House Number</label>
+                <label htmlFor="house">House Number</label>
                 <input style={styles.formInput} type="number" name="house" id="house" placeholder="e.g. '1234'" required onChange={this.handleHouseChange.bind(this)}/>
               </div>
               <div style={styles.formGroup}>
-                <label for="zip">5-Digit Zip Code</label>
+                <label htmlFor="zip">5-Digit Zip Code</label>
                 <input style={styles.formInput} type="number" name="zip" id="zip" placeholder="e.g. '54321'" required onChange={this.handleZipChange.bind(this)}/>
               </div>
               <div style={styles.formGroup}>
-                <label for="dob">Date of Birth <small>(MM/DD/YYYY)</small></label>
+                <label htmlFor="dob">Date of Birth <small>(MM/DD/YYYY)</small></label>
                 <input style={styles.formInput} type="date" placeholder="MM/DD/YYYY" name="dob" id="dob" required onChange={this.handleDobChange.bind(this)}/>
               </div>
               <div style={styles.formGroup}>
