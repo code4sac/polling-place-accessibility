@@ -90,17 +90,17 @@ export class App extends Component {
 
 		return (
 			<div style={styles.root}>
-				<div style={styles.header}>
+				<div style={styles.header} role="header">
 					Poll Locations
 				</div>
-				<div style={styles.tabs}>
+				<div style={styles.tabs} role="navigation">
 					{_.map(tabs, tab => {
 						return <div key={tab} style={styles.tab(tab)} onClick={()=>this.setState({currentTab: tab})}>
 							<span>{_.capitalize(tab)}</span>
 						</div>
 					})}
 				</div>
-				<div style={styles.currentTab}>
+				<div style={styles.currentTab} role="main">
 					{ renderedTab(this.state.currentTab) }
 				</div>
 	  		</div>
