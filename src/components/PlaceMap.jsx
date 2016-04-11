@@ -66,7 +66,7 @@ export default class PlaceMap extends Component {
   }
 
   handleMarkerClick(event, ppid, userPpid, placeName) {
-    
+
     var markerPpid = ppid || 0;
     var uPpid = userPpid || 0;
     markerPpid = parseInt(ppid)
@@ -119,11 +119,11 @@ export default class PlaceMap extends Component {
 
     const markers = _.map(this.state.places, (location) => {
       return (
-        <Marker 
-          color={this.props.light} 
-          key={'marker-'+location.ppid} 
-          ppid={location.ppid} 
-          userPpid={this.state.userPpid} 
+        <Marker
+          color={this.props.light}
+          key={'marker-'+location.ppid}
+          ppid={location.ppid}
+          userPpid={this.state.userPpid}
           position={location.latLng}
           onLeafletClick={(e)=>this.handleMarkerClick(e, location.ppid, this.state.userPpid, location.placeName)}
         >

@@ -1,7 +1,7 @@
 {
-  "name": "react-transform-boilerplate",
+  "name": "polling-place-accessibility-app",
   "version": "1.0.0",
-  "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
+  "description": "Application to improve availability of information about polling place features that affect accessibility for voters.",
   "scripts": {
     "clean": "rimraf dist",
     "copy": "cp -r public/* dist && cp index.html dist",
@@ -20,27 +20,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-transform-boilerplate.git"
+    "url": "https://github.com/abustamam/polling-place-accessibility.git"
   },
   "keywords": [
     "react",
     "reactjs",
-    "boilerplate",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
     "webpack",
     "babel",
-    "react-transform"
+    "react-transform",
+    "voting",
+    "polling",
+    "accessibility",
+    "Hack4Sac",
+    "CodeForSacramento"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Hack4Sac Voting Accessibility team (http://github.com/abustamam/polling-place-accessibility)",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/gaearon/react-transform-boilerplate/issues"
+    "url": "https://github.com/abustamam/polling-place-accessibility/issues"
   },
-  "homepage": "https://github.com/gaearon/react-transform-boilerplate",
+  "homepage": "https://github.com/abustamam/polling-place-accessibility",
   "devDependencies": {
     "babel-core": "^6.3.15",
     "babel-eslint": "^5.0.0-beta4",

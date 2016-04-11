@@ -74,7 +74,7 @@ export default class AccessibilityStory extends Component {
       this.setState({ppid: o.ppid, stories: null, ppName: o.ppName});
     }
   }
-  
+
 }
 
 AccessibilityStory.defaultProps = {
