@@ -11,6 +11,7 @@ var paths = function(pollingPlace) {
   var subCategories = [parking, pubTransit, dropOff, propertyLine, other];
   var andPaths = [];
   var noPaths = true;
+  var pathsWithSteps = [];
   
   subCategories.forEach( (val) => {
     if (val.qid_0.answer) andPaths.push('a path ' + val.qid_0.answer);
@@ -20,6 +21,12 @@ var paths = function(pollingPlace) {
     noPaths = false;
     response.summary = 'There is ' + and(andPaths) + '.';
   }
+  
+  //Steps warnings
+  subCategories.forEach( (sub) => {
+    if (sub.qid_1.answer === 'No') pathsWithSteps.push('the path ' + sub.qid_0.answer);
+  });
+  if (pathsWithSteps.length > 0) response.warnings.push('There are stairs on ' + and(pathsWithSteps) + '.');
   
   return response;
 };
