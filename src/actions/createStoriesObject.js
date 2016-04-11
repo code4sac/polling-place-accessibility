@@ -4,9 +4,9 @@ var createStoriesObject = function(pollingPlace) {
   var result = {};
   result.Parking = parking(pollingPlace);
   result.Info = {
-    ppid: pollingPlace['sec_0']['qid_1'].answer,
-    name: pollingPlace['sec_0']['qid_2'].answer,
-    address: pollingPlace['sec_0']['qid_3'].answer
+    ppid: pollingPlace['Polling Place Information']['1-Poll-Place-Information']['qid_1'].answer,
+    name: pollingPlace['Polling Place Information']['1-Poll-Place-Information']['qid_2'].answer,
+    address: pollingPlace['Polling Place Information']['1-Poll-Place-Information']['qid_3'].answer
   }
   return result;
 };

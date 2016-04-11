@@ -20,26 +20,27 @@ var access = function(ppid) {
           reject(res);
         } else {
           //console.time('access-parse-object');
-          var result = [];
+          var rows = [];
           let columns = ['ppid', 'section', 'category', 'subcategory', 'qid', 'question', 'answer', 'data', 'comments'];
           res.body.result.fArray.forEach(function(val, ind, arr){
-            if (ind%9 === 0) result.push({});
-            result[result.length-1][columns[ind%9]] = val.fStr;
+            if (ind%9 === 0) rows.push({});
+            rows[rows.length-1][columns[ind%9]] = val.fStr;
           });
-          var groupedResults = {};
+          var grouped = {};
           var ppStr = ppid.toString();
-          groupedResults[ppid.toString()] = {};
-          result.forEach(function(val, ind, arr){
-            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].ppid`, val.ppid);
-            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].question`, val.question);
-            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].answer`, val.answer);
-            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].data`, val.data);
-            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].comments`, val.comments);
-            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].category`, val.category);
-            set(groupedResults[ppStr], `['sec_${val.section}']['qid_${val.qid}'].subcategory`, val.subcategory);
+          grouped[ppid.toString()] = {};
+          rows.forEach(function(val, ind, arr){
+            let subcategory = val.subcategory || 'root';
+            set(grouped[ppStr], `['${val.category}']['${subcategory}']['qid_${val.qid}'].ppid`, val.ppid);
+            set(grouped[ppStr], `['${val.category}']['${subcategory}']['qid_${val.qid}'].question`, val.question);
+            set(grouped[ppStr], `['${val.category}']['${subcategory}']['qid_${val.qid}'].answer`, val.answer);
+            set(grouped[ppStr], `['${val.category}']['${subcategory}']['qid_${val.qid}'].data`, val.data);
+            set(grouped[ppStr], `['${val.category}']['${subcategory}']['qid_${val.qid}'].comments`, val.comments);
+            set(grouped[ppStr], `['${val.category}']['${subcategory}']['qid_${val.qid}'].category`, val.category);
+            set(grouped[ppStr], `['${val.category}']['${subcategory}']['qid_${val.qid}'].subcategory`, val.subcategory);
           });
           //console.timeEnd('access-parse-object');
-          resolve(groupedResults);
+          resolve(grouped);
         }
       });
   });
