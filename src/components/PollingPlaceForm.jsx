@@ -84,7 +84,7 @@ export default class PollingPlaceForm extends Component {
                 <input style={styles.formInput} type="date" placeholder="MM/DD/YYYY" name="dob" id="dob" required onChange={this.handleDobChange.bind(this)}/>
               </div>
               <div style={styles.formGroup}>
-                <button style={styles.formInput} onClick = {(e) => this.handleSubmit(e)}>Submit</button>
+                <button style={styles.button} onClick = {(e) => this.handleSubmit(e)}>Submit</button>
               </div>
             </div>
           </form>
