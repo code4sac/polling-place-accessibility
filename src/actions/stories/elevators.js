@@ -12,7 +12,9 @@ var elevators = function(pollingPlace) {
   var carsize = pollingPlace['Elevators & Lifts']['6-Car-Dimensions'];
   var wheelchair = pollingPlace['Elevators & Lifts']['8-Wheelchair-Lifts'];
 
-  if ( outsideElevator.qid_1.answer === "N/A" ) { return response; }
+  if ( outsideElevator === undefined || outsideElevator.qid_1.answer === "N/A" ) { 
+    return response; 
+  }
 
   if ( outsideElevator.qid_2.answer === 'No' || outsideElevator.qid_3.answer === 'No' ) {
     response.warnings.push('The area before the elevator may be narrow or obstructed.');
