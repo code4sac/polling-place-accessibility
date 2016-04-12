@@ -1,19 +1,21 @@
-module.exports = function(pollingPlace){
+var and = require('join-component');
+
+var votingArea = function(pollingPlace) {
 
   var site = pollingPlace;
-  var votingArea = site['The Voting Area'].root;
+  var votingAreaData = site['The Voting Area'].root;
   var response = { summary: 'No voting area details.', warnings: new Set() };
 
-  var stablePath = ( votingArea.qid_1.answer === 'Yes' ) ? true : false;
-  var protusionsLT4in = ( votingArea.qid_2.answer === 'Yes' ) ? true : false;
-  var protusionsLT12in = ( votingArea.qid_3.answer === 'Yes' ) ? true : false;
-  var overheadObstaclesBarred = ( votingArea.qid_4.answer === 'Yes' ) ? true : false;
-  var wheelchairSpace = ( votingArea.qid_5.answer === 'Yes' ) ? true : false;
-  var easyEmergencyExit = ( votingArea.qid_6.answer === 'Yes' ) ? true : false;
-  var crossSlopeOK = ( votingArea.qid_7.answer === 'Yes' ) ? true : false;
-  var slopeChangesBeveled = ( votingArea.qid_8.answer === 'Yes' ) ? true : false;
-  var levelChangesSloped = ( votingArea.qid_9.answer === 'Yes' ) ? true : false;
-  var adequateLighting = ( votingArea.qid_10.answer === 'Yes' ) ? true : false;
+  var stablePath = ( votingAreaData.qid_1.answer === 'Yes' ) ? true : false;
+  var protusionsLT4in = ( votingAreaData.qid_2.answer === 'Yes' ) ? true : false;
+  var protusionsLT12in = ( votingAreaData.qid_3.answer === 'Yes' ) ? true : false;
+  var overheadObstaclesBarred = ( votingAreaData.qid_4.answer === 'Yes' ) ? true : false;
+  var wheelchairSpace = ( votingAreaData.qid_5.answer === 'Yes' ) ? true : false;
+  var easyEmergencyExit = ( votingAreaData.qid_6.answer === 'Yes' ) ? true : false;
+  var crossSlopeOK = ( votingAreaData.qid_7.answer === 'Yes' ) ? true : false;
+  var slopeChangesBeveled = ( votingAreaData.qid_8.answer === 'Yes' ) ? true : false;
+  var levelChangesSloped = ( votingAreaData.qid_9.answer === 'Yes' ) ? true : false;
+  var adequateLighting = ( votingAreaData.qid_10.answer === 'Yes' ) ? true : false;
 
   if ( ! stablePath ) {
     response.warnings.add ('Path of travel within the voting area may be slippery/unstable.');
@@ -56,3 +58,5 @@ module.exports = function(pollingPlace){
   response.warnings = Array.from(response.warnings);
   return response;
 };
+
+module.exports = votingArea;
