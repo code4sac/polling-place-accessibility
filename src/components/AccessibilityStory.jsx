@@ -22,8 +22,8 @@ export default class AccessibilityStory extends Component {
     var accordionCounter = 0;
     for (var section in this.state.stories) {
       accordionCounter++;
-      let warnings = this.state.stories[section].warnings.map((val) => (
-        <li className="accessibilityWarning" style={styles.warningListItem}>
+      let warnings = this.state.stories[section].warnings.map((val, index) => (
+        <li className="accessibilityWarning" style={styles.warningListItem} key={index}>
           <span style={styles.beforeWarning}>⚠   </span>
           {val}
         </li>))
