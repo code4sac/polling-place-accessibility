@@ -30,7 +30,7 @@ export default class AccessibilityStory extends Component {
       let id = `panel${accordionCounter}a`;
       let href = '#' + id;
       stories.push(
-        <li key={`${this.state.ppid}-${section}`} className="accordion-navigation">
+        <li key={`${this.state.ppid}-${section}-${index}`} className="accordion-navigation">
           <a href={href}>{section}</a>
           <div id={id} className="content active">
             {this.state.stories[section].summary}
@@ -51,7 +51,7 @@ export default class AccessibilityStory extends Component {
     )
   }
   componentDidMount() {
-    console.log('this getStoreState: ' + this.getStoreState);
+    console.log('this getStoreState: ' + this.getStoreState());
     store.observeChanges(this.getStoreState.bind(this));
     // $(document).foundation();
   }
