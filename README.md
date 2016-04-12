@@ -1,16 +1,16 @@
 ## Project Information
 
 ### Project Name
-Polling Place Accessibility App
+[Polling Place Accessibility App] (http://abustamam.github.io/polling-place-accessibility)
 
 ### Project Description
 This app is intended to provide a resource for voting persons who have specific needs for voting venues.
 
 ### Team Members
 - Rasheed Bustamam rasheed.bustamam@gmail.com
-- Hans Chun 
-- [Brooks Newberry](https://github.com/brooksn) 
-- Nate Cornell 
+- [Brooks Newberry](https://github.com/brooksn)
+- Nate Cornell
+- [Hans Chun] (https://github.com/hanschun)
 
 ### Stakeholder Engagement
 - Courtney Bailey, Voter Registration & Elections
@@ -29,7 +29,7 @@ Build the CSS files:
 Run the server:
 `npm run start`
 
-Open up in your web browser: 
+Open up in your web browser:
 `localhost:3000`
 
 Please read [the project wiki](https://github.com/abustamam/polling-place-accessibility/wiki), your questions may be answered there.

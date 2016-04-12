@@ -62,7 +62,7 @@ export default class PollingPlaceForm extends Component {
           <div>
             <h1 style={styles.header}>Polling Place Form</h1>
           </div>
-          <form id="polling-place-form" data-abide>
+          <form id="polling-place-form" data-abide role="form">
             <div style={styles.form}>
               <div style={styles.formGroup}>
                 <label htmlFor="house">House Number</label>
