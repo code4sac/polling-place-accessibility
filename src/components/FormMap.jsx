@@ -48,7 +48,14 @@ export default class FormMap extends Component {
       markers = this.allPlaceMarkers();
     }
     map = (
-        <Map zoom={zoom} center={center} className="full-height" bounds={bounds} style={{height: '100%'}}>
+        <Map 
+          zoom={zoom} 
+          center={center} 
+          className="full-height" 
+          bounds={bounds} 
+          style={{height: '100vh'}}
+          scrollWheelZoom={false}
+        >
           <TileLayer
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

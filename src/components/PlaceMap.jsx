@@ -74,7 +74,9 @@ export default class PlaceMap extends Component {
       //Make clear this is definitely not the user's assigned polling place
       //this.setState({caption: ''})
     }
-    this.setState({ppid, placeName})
+    this.setState({ppid, placeName, loading: true})
+
+    _.delay(() => this.setState({loading: false}), 2500)
   }
 
   getStories() {
@@ -113,6 +115,10 @@ export default class PlaceMap extends Component {
     const west = [38.5026946913, -121.522912009]
     const bounds = [north, east, south, west]
 
+    const storyText = this.state.loading ? 
+      <div style={{width: '100%', display: 'flex', justifyContent: 'space-around'}}><span>Loading information for {this.state.placeName}</span></div> : 
+      this.getStories()
+
     const markers = _.map(this.state.places, (location) => {
       return (
         <Marker
@@ -123,8 +129,11 @@ export default class PlaceMap extends Component {
           position={location.latLng}
           onLeafletClick={(e)=>this.handleMarkerClick(e, location.ppid, this.state.userPpid, location.placeName)}
         >
-          <Popup key={'popup-'+location.ppid}>
-            {this.getStories()}
+          <Popup key={'popup-'+location.ppid}
+            minWidth={400}
+            minHeight={400}
+          >
+            {storyText}
           </Popup>
         </Marker>
       )
@@ -133,15 +142,17 @@ export default class PlaceMap extends Component {
     return (
       <div style={styles.root}>
         <h1 style={styles.header}>Polling Place Map</h1>
-        <Map bounds={bounds} style={{height: '100%'}}>
-          <TileLayer
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          />
-          {markers}
-        </Map>
-        <div>
-        </div>
+          <Map 
+            bounds={bounds} 
+            style={{height: '100vh'}}
+            scrollWheelZoom={false}
+          >
+            <TileLayer
+              url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            />
+            {markers}
+          </Map>
       </div>
     )
   }

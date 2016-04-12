@@ -80,8 +80,8 @@ export class App extends Component {
 			} else if (tab === 'find your polling place') {
 				return <div>
 					<PollingPlaceForm approxLat={this.props.approxLat} approxLong={this.props.approxLong} />
+					<AccessibilityStory />
 			        <FormMap approxLat={this.props.approxLat} approxLong={this.props.approxLong} />
-			        <AccessibilityStory />
 				</div>
 			} else if (tab === 'resources') {
 				return <Resources/>
