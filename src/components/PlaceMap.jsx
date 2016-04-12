@@ -67,7 +67,7 @@ export default class PlaceMap extends Component {
     var uPpid = userPpid || 0;
     markerPpid = parseInt(ppid)
     uPpid = parseInt(uPpid)
-    console.log('marker clicked with ppid: ' + ppid, uPpid);
+    console.log('PlaceMap marker clicked with ppid: ' + ppid, uPpid);
     if (markerPpid !== userPpid) {
       //Change the caption and accessibility data
       store.setPPID(markerPpid);
@@ -133,15 +133,17 @@ export default class PlaceMap extends Component {
     return (
       <div style={styles.root}>
         <h1 style={styles.header}>Polling Place Map</h1>
-        <Map bounds={bounds} style={{height: '100%'}}>
-          <TileLayer
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          />
-          {markers}
-        </Map>
-        <div>
-        </div>
+          <Map 
+            bounds={bounds} 
+            style={{height: '100vh'}}
+            scrollWheelZoom={false}
+          >
+            <TileLayer
+              url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            />
+            {markers}
+          </Map>
       </div>
     )
   }
