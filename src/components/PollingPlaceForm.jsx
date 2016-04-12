@@ -63,6 +63,7 @@ export default class PollingPlaceForm extends Component {
           <div>
             <h1 style={styles.header}>Polling Place Form</h1>
           </div>
+          <p>{caption} {addressLink}</p>
           <form id="polling-place-form" data-abide role="form">
             <div style={styles.form}>
               <div style={styles.formGroup}>
@@ -81,8 +82,7 @@ export default class PollingPlaceForm extends Component {
                 <button style={styles.formInput} onClick = {(e) => this.handleSubmit(e)}>Submit</button>
               </div>
             </div>
-          </form>
-          <p>{caption} {addressLink}</p>
+          </form>          
         </div>
       </div>
     );

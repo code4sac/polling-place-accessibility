@@ -14,7 +14,7 @@ export class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			currentTab: 'map'
+			currentTab: 'find your polling place'
 		}
 	}
 
@@ -71,7 +71,7 @@ export class App extends Component {
 
 	render() {
 
-		const tabs = ['map', 'find your polling place', 'resources', 'about']
+		const tabs = ['find your polling place', 'map',  'resources', 'about']
 		const styles = this.getStyles()
 
 		let renderedTab = (tab) => {
