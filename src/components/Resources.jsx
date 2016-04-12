@@ -50,6 +50,7 @@ export default class Resources extends Component {
 			"other-info",
 			"office-location",
 		]
+
 		let toc = _.map(headers, (header) => {
 			return <div>
 				<a href={`#${header}`}>{
