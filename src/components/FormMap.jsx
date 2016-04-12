@@ -19,6 +19,7 @@ export default class FormMap extends Component {
   }
   render() {
     var map = null;
+    var zoom = null;
     var markers = [];
     var center = [this.props.approxLat, this.props.approxLong];
 
@@ -26,10 +27,12 @@ export default class FormMap extends Component {
     const east = [38.6648806855, -121.133173599]
     const south = [38.2571979184, -121.303787278]
     const west = [38.5026946913, -121.522912009]
-    const bounds = [north, east, south, west]
+    let bounds = [north, east, south, west]
 
     if (this.state.userLat && this.state.userLong) center = [this.state.userLat, this.state.userLong];
     if (this.state.lat && this.state.long) {
+      zoom = 13;
+      bounds = null;
       center = [this.state.lat, this.state.long];
       var ppid = this.state.userPpid;
       markers.push(
@@ -40,10 +43,12 @@ export default class FormMap extends Component {
           </Marker>
       )
     } else {
+      center = null;
+      zoom = null;
       markers = this.allPlaceMarkers();
     }
     map = (
-        <Map className="full-height" bounds={bounds} style={{height: '100%'}}>
+        <Map zoom={zoom} center={center} className="full-height" bounds={bounds} style={{height: '100%'}}>
           <TileLayer
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
