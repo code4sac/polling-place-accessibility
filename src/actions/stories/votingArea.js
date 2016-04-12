@@ -15,18 +15,13 @@ var votingArea = function(pollingPlace) {
   var crossSlopeOK = ( votingAreaData.qid_7.answer === 'Yes' ) ? true : false;
   var slopeChangesBeveled = ( votingAreaData.qid_8.answer === 'Yes' ) ? true : false;
   var levelChangesSloped = ( votingAreaData.qid_9.answer === 'Yes' ) ? true : false;
-  var adequateLighting = ( votingAreaData.qid_10.answer === 'Yes' ) ? true : false;
 
   if ( ! stablePath ) {
     response.warnings.add ('Path of travel within the voting area may be slippery/unstable.');
   }
 
-  if ( ! protusionsLT4in ) {
-    response.warnings.add( 'Take care of obstacles 4" or less in the walkway.' );
-  }
-
-  if ( ! protusionsLT12in ) {
-    response.warnings.add( 'Take care of obstacles 12" or less in the walkway.' );
+  if ( ! protusionsLT4in || ! protusionsLT12in ) {
+    response.warnings.add( 'Take care of obstacles in the walkway.' );
   }
 
   if ( ! overheadObstaclesBarred ) {
@@ -45,12 +40,8 @@ var votingArea = function(pollingPlace) {
     response.warnings.add( 'There may be unbeveled or highly sloped changes in the floor level.' );
   }
 
-  if ( ! adequateLighting ) {
-    response.warnings.add( 'Possibly dim lighting within the voting area.' );
-  }
-
-  if ( response.warnings.length > 0 ) {
-    response.summary = 'The voting area has some accessibility concerns.';
+  if ( response.warnings.size > 0 ) {
+    response.summary = 'The voting area has some accessibility concerns:';
   } else {
     response.summary = 'The voting area is fully accessible for all.';
   }
