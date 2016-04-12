@@ -20,7 +20,7 @@ var elevators = function(pollingPlace) {
 
   // TODO: Add more questions
 
-  if ( response.warnings.size > 0 ) {
+  if ( response.warnings.length > 0 ) {
     response.summary = "There are a few accessibility issues with the elevators or lifts:";
   } else {
     response.summary = "The elevators and/or lifts are fully accessible to all.";
