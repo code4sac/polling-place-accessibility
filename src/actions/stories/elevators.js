@@ -14,9 +14,11 @@ var elevators = function(pollingPlace) {
 
   if ( outsideElevator.qid_1.answer === "N/A" ) { return response; }
 
-  if (   outsideElevator.qid_2.answer === 'No' || outsideElevator.qid_3.answer === 'No' ) {
+  if ( outsideElevator.qid_2.answer === 'No' || outsideElevator.qid_3.answer === 'No' ) {
     response.warnings.push('The area before the elevator may be narrow or obstructed.');
   }
+
+  // TODO: Add more questions
 
   if ( response.warnings.size > 0 ) {
     response.summary = "There are a few accessibility issues with the elevators or lifts:";
@@ -27,4 +29,4 @@ var elevators = function(pollingPlace) {
   return response;
 };
 
-module.exports = paths;
+module.exports = elevators;
