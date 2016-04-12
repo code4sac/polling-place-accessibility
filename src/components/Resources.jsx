@@ -50,7 +50,7 @@ export default class Resources extends Component {
 			"other-info",
 			"office-location",
 		]
-		
+
 		let toc = _.map(headers, (header) => {
 			return <div key={header}>
 				<a href={`#${header}`}>{
@@ -74,14 +74,14 @@ export default class Resources extends Component {
 				<h2 id="our-mission" style={styles.headers}>Our Mission</h2>
 				<br/>
 				<h3 style={styles.headers}>People First</h3>
-				<p>Sacramento County Voter Registration and Elections staff understands that voters 
+				<p>Sacramento County Voter Registration and Elections staff understands that voters
 				with specific needs are people, and their disability does not define them.</p>
 				<h3 style={styles.headers}>Precinct Officer Training</h3>
 				<p>All Precinct Officers working at a polling place on Election Day are trained to provide assistance to
 				voters with specific needs. Our goal is to allow every voter to vote independently and privately.</p>
 				<h3 style={styles.headers}>Polling Place Accessibility</h3>
 				<p>Each election, polling places are selected using the Americans with Disabilities Act (ADA)
-				guidelines. If you have any questions regarding polling place accessibility, contact us at 
+				guidelines. If you have any questions regarding polling place accessibility, contact us at
 				(916) 875-6100.</p>
 				<h3 style={styles.headers}>Accessible Voting Supplies</h3>
 				<p>All polling places have a wheelchair accessible voting booth and a magnifying glass to ensure
@@ -111,19 +111,19 @@ export default class Resources extends Component {
 					<li>Headphones</li>
 					<li>Stylus</li>
 				</ul>
-				<h4 style={styles.headers}>Curbside Voting</h4> 
+				<h4 style={styles.headers}>Curbside Voting</h4>
 				<p>Sacramento County offers curbside voting for any voter who is unable to
 				reasonably access a polling place. A voter may call our office at (916) 875-6377 on Election Day
 				to request curbside voting at their polling place.</p>
-				
+
 				<h3 style={styles.headers}>Vote by Mail</h3>
 				<p>Every registered voter in Sacramento County has the option to receive their official ballot by mail.
 				Vote by Mail voting provides a means for eligible voters to participate in elections even though they
 				may not be able to go to the polls on Election Day.</p>
-				
+
 				<h3 style={styles.headers}>In Office Voting</h3>
 				<p>Starting 29 days before an election, voters may come to the Sacramento County Voter
-				Registration and Elections office during business hours and vote. This service is provided through 
+				Registration and Elections office during business hours and vote. This service is provided through
 				the close of polls at 8:00 p.m. Election Day.</p>
 				<div>
 					<a style={styles.top} href="#">Back To Top {svgTopIcon}</a>
@@ -144,8 +144,8 @@ export default class Resources extends Component {
 						<img
 							width="380"
 							height="206"
-							
-							src={"https://raw.githubusercontent.com/abustamam/polling-place-accessibility/layout-test/public/images/I-Voted-Proof-rev-copy.jpg"} 
+
+							src={"https://raw.githubusercontent.com/abustamam/polling-place-accessibility/master/public/images/I-Voted-Proof-rev-copy.jpg"}
 							alt="I voted sticker: attritbution Alicia Chan"
 						/>
 					</a>
@@ -156,7 +156,7 @@ export default class Resources extends Component {
 				Information Guide to every household with a
 				registered voter. This guide covers all propositions
 				and candidate statements for statewide elections.</p>
-				
+
 				<h3 style={styles.headers}>Alternative formats</h3>
 				<p>The Voter Information Guide is also available in
 				large print and audio format. Sacramento County
@@ -184,7 +184,7 @@ export default class Resources extends Component {
 					<li>Contact the Voter Registration and Elections Office, and a registration form
 					will be mailed to you.</li>
 				</ul>
-				
+
 				<h3 style={styles.headers}>Register to vote online</h3>
 
 				<p>The California Secretary of State offers an online
