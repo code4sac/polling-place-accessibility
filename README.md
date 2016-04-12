@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/abustamam/polling-place-accessibility.svg?branch=master)](https://travis-ci.org/abustamam/polling-place-accessibility)
+
 ## Project Information
 
 ### Project Name
