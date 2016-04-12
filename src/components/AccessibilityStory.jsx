@@ -43,7 +43,13 @@ export default class AccessibilityStory extends Component {
     }
     return (
       <div>
-        <h2>{name? `Accessibility of ${name}` : 'Search or select a site to view accessibility information.'}</h2>
+        <h2>{name ? `Accessibility of ${name}` : 'Search or select a site to view accessibility information.'}</h2>
+        <p>If any of the following pose a problem, please call one of the following numbers:</p>
+        <ul>
+        <li>Voter Registration & Elections Office Main Line: (916) 875-6451</li>
+        <li>Voter Registration & Elections Office-Español: (916) 876-6688</li>
+        <li>Voter Registration & Elections Office-中文: (916) 876-8402</li>
+        </ul>
         <ul className="accordion" data-accordion>
           {stories}
         </ul>
