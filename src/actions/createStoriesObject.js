@@ -10,7 +10,7 @@ var createStoriesObject = function(pollingPlace) {
   result.Restrooms = restrooms(pollingPlace);
   result['Paths of Travel'] = paths(pollingPlace);
   result.Signs = signs(pollingPlace);
-  result.VotingArea = votingArea(pollingPlace);
+  result['Voting Area'] = votingArea(pollingPlace);
   result.Info = {
     ppid: pollingPlace['Polling Place Information']['1-Poll-Place-Information']['qid_1'].answer,
     name: pollingPlace['Polling Place Information']['1-Poll-Place-Information']['qid_2'].answer,
