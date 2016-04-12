@@ -133,15 +133,17 @@ export default class PlaceMap extends Component {
     return (
       <div style={styles.root}>
         <h1 style={styles.header}>Polling Place Map</h1>
-        <Map bounds={bounds} style={{height: '100%'}}>
-          <TileLayer
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          />
-          {markers}
-        </Map>
-        <div>
-        </div>
+          <Map 
+            bounds={bounds} 
+            style={{height: '100vh'}}
+            scrollWheelZoom={false}
+          >
+            <TileLayer
+              url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            />
+            {markers}
+          </Map>
       </div>
     )
   }
