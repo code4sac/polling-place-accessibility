@@ -34,15 +34,15 @@ var doorways = function(pollingPlace) {
   }
 
   if (   doorwaysData.qid_10.answer === 'No' || doorwaysData.qid_12.answer === 'No' 
-      || doorwaysData.qid_13.answer === 'No' || doorwaysData.qid_14.answer === 'No' ) {
+      || ( doorwaysData.qid_14 !== undefined  && doorwaysData.qid_14.answer  === 'No' )
+      || doorwaysData.qid_13.answer === 'No' ) {
     response.warnings.push('Take care for uneven or crowded spaces around the doorways');
   }
 
-  if ( doorwaysData.qid_11.answer === 'No' || doorwaysData.qid_15.answer === 'No' ) {
+  if ( doorwaysData.qid_11.answer === 'No' || ( doorwaysData.qid_15 !== undefined  
+                                               && doorwaysData.qid_15.answer  === 'No' ) ) {
     response.warnings.push('Narrow strike space in doorways.');
   }
-
-  console.log( "warnings size: " + response.warnings.length );
 
   if ( response.warnings.length > 0 ) {
     response.summary = 'Some accessibility concerns with the doorways: ';
