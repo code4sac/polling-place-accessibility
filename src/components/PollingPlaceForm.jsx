@@ -48,6 +48,9 @@ export default class PollingPlaceForm extends Component {
       formInput: {
         height: '2.4375rem',
         fontSize: '1rem'
+      },
+      button: {
+        background: 'gray'
       }
     }
   }
@@ -82,7 +85,7 @@ export default class PollingPlaceForm extends Component {
                 <button style={styles.formInput} onClick = {(e) => this.handleSubmit(e)}>Submit</button>
               </div>
             </div>
-          </form>          
+          </form>
         </div>
       </div>
     );
