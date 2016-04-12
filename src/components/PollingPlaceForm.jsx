@@ -50,7 +50,9 @@ export default class PollingPlaceForm extends Component {
         fontSize: '1rem'
       },
       button: {
-        background: 'light-gray'
+        height: '2.4375rem',
+        fontSize: '1rem',
+        backgroundColor: 'lightgray'
       }
     }
   }
