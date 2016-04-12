@@ -13,7 +13,8 @@ export default class FormMap extends Component {
       placeName: null,
       address: null,
       userLat: null,
-      userLong: null
+      userLong: null,
+      store: store
     };
   }
   render() {
@@ -28,8 +29,8 @@ export default class FormMap extends Component {
     const bounds = [north, east, south, west]
 
     if (this.state.userLat && this.state.userLong) center = [this.state.userLat, this.state.userLong];
-    if (this.state.latitude && this.state.longitude) {
-      center = [this.state.latitude, this.state.longitude];
+    if (this.state.lat && this.state.long) {
+      center = [this.state.lat, this.state.long];
       var ppid = this.state.userPpid;
       markers.push(
         <Marker color={this.props.activeColor} key={'marker-'+ppid} ppid={ppid} userPpid={ppid} onLeafletClick={this.handleMarkerClick} position={center}>
@@ -69,10 +70,12 @@ export default class FormMap extends Component {
     store.unobserveChanges(this.getStoreState.bind(this));
   }
   getStoreState(o) {
+    console.log('FormMap getStoreState: ');
+    console.log(o);
     this.setState({ppid: o.ppid, lat: o.ppLat, long: o.ppLong, placeName: o.ppName, address: o.ppAddress});
   }
   handleMarkerClick(event) {
-    console.log('marker clicked with ppid: ' + this.options.ppid);
+    console.log('two FormMap marker clicked with ppid: ' + this.options.ppid);
     var markerPpid = parseInt(this.options.ppid || 0);
     var userPpid = parseInt(this.options.userPpid || 0);
     if (markerPpid !== userPpid) {

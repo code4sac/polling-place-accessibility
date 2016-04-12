@@ -67,7 +67,7 @@ export default class PlaceMap extends Component {
     var uPpid = userPpid || 0;
     markerPpid = parseInt(ppid)
     uPpid = parseInt(uPpid)
-    console.log('marker clicked with ppid: ' + ppid, uPpid);
+    console.log('PlaceMap marker clicked with ppid: ' + ppid, uPpid);
     if (markerPpid !== userPpid) {
       //Change the caption and accessibility data
       store.setPPID(markerPpid);
