@@ -14,7 +14,8 @@ export default class PollingPlaceForm extends Component {
       zip: null,
       dob: null,
       place: null,
-      address: null
+      address: null,
+      store: store
     };
   }
 
@@ -101,7 +102,8 @@ export default class PollingPlaceForm extends Component {
       return pollingPlaceRequests.place(pollid, this.props.fusionkey);
     })
     .then((place) => {
-      store.setVals({ppName: place['Polling place'], ppAddress: `${place.Address} ${place.City}, ${this.props.stateAbbr} ${place.Zip}`, ppLat: place.Lat, ppLong: place.Long});
+      var vals = {ppName: place['Polling place'], ppAddress: `${place.Address} ${place.City}, ${this.props.stateAbbr} ${place.Zip}`, ppLat: place.Lat, ppLong: place.Long};
+      store.setVals(vals);
       this.setState({place: place['Polling place'], address: `${place.Address} ${place.City}, ${this.props.stateAbbr} ${place.Zip}`, latitude: place.Lat, longitude: place.Long});
       var caption = '';
       if (this.state.mailDate && this.state.mailDate != '') caption += `Your absentee ballot was mailed to this address on ${this.state.mailDate}. You may still vote at your polling place on election day. `;
