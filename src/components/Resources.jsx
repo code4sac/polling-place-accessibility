@@ -52,7 +52,7 @@ export default class Resources extends Component {
 		]
 
 		let toc = _.map(headers, (header) => {
-			return <div>
+			return <div key={header}>
 				<a href={`#${header}`}>{
 					_.map(_.split(header, '-'), _.capitalize).join(' ')
 				}</a>
